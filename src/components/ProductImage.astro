@@ -1,0 +1,20 @@
+---
+import type { Product } from '../lib/catalog';
+import Glyph from './Glyph.astro';
+interface Props { product: Product; src?: string | null; eager?: boolean; size?: 'card' | 'hero' }
+const { product, src = product.image, eager = false, size = 'card' } = Astro.props;
+const pending = !src;
+---
+<div class:list={['pimg', `pimg--${size}`, pending && 'pimg--pending']}>
+  <div class="pimg-fallback" aria-hidden={src ? 'true' : undefined}><Glyph product={product} /></div>
+  {src && <img src={src} alt={product.name} loading={eager ? 'eager' : 'lazy'} decoding="async" onerror="this.remove()" />}
+  {pending && <span class="pimg-note">Photo coming soon</span>}
+</div>
+<style>
+  .pimg { position: relative; aspect-ratio: 4 / 3; background: #fff; display: grid; place-items: center; overflow: hidden; }
+  .pimg--hero { aspect-ratio: 1 / 1; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+  .pimg--pending { background: linear-gradient(180deg, #f7f7f5, #edeeec); }
+  .pimg-fallback { position: absolute; inset: 14%; }
+  .pimg img { position: relative; width: 100%; height: 100%; object-fit: contain; padding: 8%; background: #fff; }
+  .pimg-note { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font: 500 .6875rem/1 var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+</style>

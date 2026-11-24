@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import { products } from '../lib/catalog';
+import { site } from '../data/site';
+const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rrp: p.rrp, url: `/products/${p.slug}` }]));
+---
+<Base title="Request a quote" description="Send your LDR parts list and we'll connect you with a reseller for pricing and availability.">
+  <div class="wrap q">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Request a quote</nav>
+    <header class="page-intro">
+      <h1>Request a quote</h1>
+      <p class="lede">Send us your parts list. We'll confirm availability and connect you with a reseller for pricing.</p>
+    </header>
+
+    <form id="quote" class="q-grid" novalidate>
+      <section class="q-items">
+        <h2>Parts</h2>
+        <p id="q-empty" class="muted">No parts added yet. Use <a href="/rack-builder">the Rack Builder</a> or add SKUs below.</p>
+        <ul id="q-list"></ul>
+        <div class="q-add">
+          <label for="q-sku" class="visually-hidden">Add a SKU</label>
+          <input id="q-sku" class="input" list="q-skus" placeholder="Add a SKU, e.g. RCLDR-SS450-9U-A" autocomplete="off" />
+          <datalist id="q-skus">{products.map((p) => <option value={p.sku}>{p.name}</option>)}</datalist>
+          <button type="button" id="q-add" class="btn btn--secondary">Add</button>
+        </div>
+        <p id="q-build" class="muted q-build" hidden>Includes a Rack Builder configuration. <a id="q-build-link" href="/rack-builder">Open the build</a></p>
+      </section>
+
+      <section class="q-details">
+        <h2>Your details</h2>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" class="input" required autocomplete="name" /></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" class="input" autocomplete="organization" /></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" class="input" required autocomplete="email" /></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" class="input" autocomplete="tel" /></div>
+        <div class="field"><label for="f-postcode">Postcode</label><input id="f-postcode" name="postcode" class="input" inputmode="numeric" maxlength="4" autocomplete="postal-code" /></div>
+        <div class="field">
+          <span class="label" id="f-role-l">I am</span>
+          <div class="roles" role="radiogroup" aria-labelledby="f-role-l">
+            <label><input type="radio" name="role" value="End customer" checked /> An end customer</label>
+            <label><input type="radio" name="role" value="Reseller / integrator" /> A reseller or integrator</label>
+          </div>
+        </div>
+        <div class="field"><label for="f-msg">Notes</label><textarea id="f-msg" name="message" class="textarea" placeholder="Site details, timing, anything else we should know"></textarea></div>
+        <p id="q-error" class="notice notice--warn" hidden></p>
+        <button class="btn btn--primary" type="submit">Send request</button>
+        <p class="muted q-fine">This opens an email to our sales team with your parts list attached.</p>
+      </section>
+    </form>
+  </div>
+  <script id="q-data" type="application/json" set:html={JSON.stringify({ lookup, email: site.quoteEmail })}></script>
+</Base>
+
+<script>
+  // TODO: replace the mailto hand-off with a real form endpoint (Leader CRM or a form service) before launch.
+  const { lookup, email } = JSON.parse(document.getElementById('q-data')!.textContent!);
+  const sp = new URLSearchParams(location.search);
+  const items = new Map<string, number>();
+  for (const part of (sp.get('items') ?? '').split(',').filter(Boolean)) {
+    const [sku, q] = part.split(':');
+    if (lookup[sku]) items.set(sku, Math.max(1, parseInt(q, 10) || 1));
+  }
+  const build = sp.get('build');
+  if (build) {
+    document.getElementById('q-build')!.hidden = false;
+    (document.getElementById('q-build-link') as HTMLAnchorElement).href = `/rack-builder?${build}`;
+  }
+  const list = document.getElementById('q-list')!;
+  const empty = document.getElementById('q-empty')!;
+
+  function render() {
+    list.innerHTML = '';
+    for (const [sku, qty] of items) {
+      const p = lookup[sku];
+      const li = document.createElement('li');
+      li.innerHTML = `<div><a href="${p.url}"></a><small class="sku"></small></div>
+        <input type="number" min="1" max="99" class="input qty" aria-label="Quantity" value="${qty}" />
+        <button type="button" class="rm" aria-label="Remove">×</button>`;
+      (li.querySelector('a') as HTMLAnchorElement).textContent = p.name;
+      (li.querySelector('small') as HTMLElement).textContent = sku;
+      li.querySelector('input')!.addEventListener('change', (e) => items.set(sku, Math.max(1, +(e.target as HTMLInputElement).value || 1)));
+      li.querySelector('.rm')!.addEventListener('click', () => { items.delete(sku); render(); });
+      list.appendChild(li);
+    }
+    empty.hidden = items.size > 0;
+  }
+  render();
+
+  const skuIn = document.getElementById('q-sku') as HTMLInputElement;
+  const addSku = () => {
+    const s = skuIn.value.trim().toUpperCase();
+    if (lookup[s]) { items.set(s, (items.get(s) ?? 0) + 1); skuIn.value = ''; render(); }
+    else skuIn.setCustomValidity('Unknown SKU'), skuIn.reportValidity(), skuIn.setCustomValidity('');
+  };
+  document.getElementById('q-add')!.addEventListener('click', addSku);
+  skuIn.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); addSku(); } });
+
+  document.getElementById('quote')!.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target as HTMLFormElement;
+    const fd = new FormData(f);
+    const err = document.getElementById('q-error')!;
+    const missing = ['name', 'email'].filter((k) => !String(fd.get(k) ?? '').trim());
+    if (missing.length || !items.size) {
+      err.textContent = !items.size ? 'Add at least one part.' : 'Please enter your name and email.';
+      err.hidden = false; return;
+    }
+    err.hidden = true;
+    const lines = [...items].map(([s, q]) => `${q} x ${s}  ${lookup[s].name}`);
+    const body = [
+      `Name: ${fd.get('name')}`, `Company: ${fd.get('company') || '-'}`, `Email: ${fd.get('email')}`,
+      `Phone: ${fd.get('phone') || '-'}`, `Postcode: ${fd.get('postcode') || '-'}`, `Role: ${fd.get('role')}`, '',
+      'Parts:', ...lines, '', build ? `Rack Builder: ${location.origin}/rack-builder?${build}` : '',
+      `Notes: ${fd.get('message') || '-'}`,
+    ].join('\n');
+    location.href = `mailto:${email}?subject=${encodeURIComponent('LDR quote request')}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+
+<style>
+  .q { padding-bottom: 80px; }
+  .page-intro { padding: 12px 0 28px; }
+  .q-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 860px) { .q-grid { grid-template-columns: 1fr; } }
+  .q-grid h2 { font-size: 1.25rem; font-stretch: 100%; }
+  .q-items { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; }
+  #q-list { list-style: none; padding: 0; margin: 0 0 16px; border-top: 1px solid var(--line); }
+  #q-list:empty { border: 0; }
+  :global(#q-list li) { display: grid; grid-template-columns: 1fr 76px 36px; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  :global(#q-list li div) { display: grid; }
+  :global(#q-list li a) { font-weight: 600; text-decoration: none; }
+  :global(#q-list .qty) { min-height: 38px; padding: 6px 8px; }
+  :global(#q-list .rm) { width: 36px; height: 36px; border: 1px solid var(--line); background: #fff; border-radius: var(--radius); cursor: pointer; font-size: 1.1rem; }
+  .q-add { display: flex; gap: 8px; }
+  .q-build { margin: 14px 0 0; font-size: .875rem; }
+  .q-details { display: grid; gap: 14px; }
+  .roles { display: grid; gap: 6px; }
+  .roles label { display: flex; gap: 8px; align-items: center; }
+  .roles input { accent-color: var(--accent); }
+  .q-details .btn { justify-self: start; }
+  .q-fine { font-size: .8125rem; margin: 0; }
+</style>

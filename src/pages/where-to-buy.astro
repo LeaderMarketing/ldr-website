@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="Where to buy" description="LDR racks are sold through Australian resellers and integrators, supplied from Leader Systems warehouses in five states.">
+  <div class="wrap wtb">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Where to buy</nav>
+    <header class="page-intro">
+      <h1>Where to buy</h1>
+      <p class="lede">LDR is sold through resellers and integrators, not direct. Stock is held at Leader Systems warehouses in five states.</p>
+    </header>
+
+    <div class="paths">
+      <article class="path">
+        <h2>I'm an end customer</h2>
+        <p>Buy through your IT provider, installer or a reseller. Send us your parts list and we'll put you in touch with one near you.</p>
+        <a class="btn btn--primary" href="/quote">Request a quote</a>
+      </article>
+      <article class="path">
+        <h2>I'm a reseller with a Leader account</h2>
+        <p>Order LDR in the Leader trade portal, with live pricing and branch stock.</p>
+        <a class="btn btn--secondary" href={site.tradePortal} rel="noopener">Open the Leader portal ↗</a>
+      </article>
+      <article class="path">
+        <h2>I'd like to resell LDR</h2>
+        <p>Open a Leader Systems trade account to buy LDR and the rest of Leader's range.</p>
+        <a class="btn btn--secondary" href={site.tradePortal} rel="noopener">Apply for an account ↗</a>
+      </article>
+    </div>
+
+    <section class="branches">
+      <h2>Leader Systems warehouses</h2>
+      <p class="muted">Collection and freight are arranged through your reseller. Stock varies by branch.</p>
+      <ul>
+        {site.warehouses.map((w) => (
+          <li>
+            <span class="badge">{w.state}</span>
+            <strong>{w.city}</strong>
+            {w.address && <span>{w.address}</span>}
+            {w.phone && <a href={`tel:${w.phone.replace(/[^\d]/g, '')}`}>{w.phone}</a>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .wtb { padding-bottom: 80px; }
+  .page-intro { padding: 12px 0 28px; }
+  .paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+  .path { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; display: grid; gap: 4px; align-content: start; }
+  .path h2 { font-size: 1.2rem; font-stretch: 100%; }
+  .path p { color: var(--ink-2); }
+  .path .btn { justify-self: start; }
+  .branches { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .branches ul { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 12px; }
+  .branches li { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px; display: grid; gap: 6px; align-content: start; }
+  .branches li .badge { justify-self: start; }
+  .branches li span:not(.badge) { color: var(--muted); font-size: .9375rem; }
+</style>

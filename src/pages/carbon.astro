@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { racks, accessories, TYPE_LABEL, GROUP_LABEL, type RackType, type AccGroup } from '../lib/catalog';
+
+const carbonRacks = racks.filter((r) => r.range === 'carbon');
+const carbonAcc = accessories.filter((a) => a.range === 'carbon');
+const rackGroups = (['wall', 'floor', 'mini', 'vertical', 'bracket'] as RackType[])
+  .map((t) => [t, carbonRacks.filter((r) => r.type === t)] as const).filter(([, l]) => l.length);
+const accGroups = [...new Set(carbonAcc.map((a) => a.group))] as AccGroup[];
+const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type === t).map((r) => r.ru); return `${Math.min(...l)}U–${Math.max(...l)}U`; };
+---
+<Base title="Carbon range" description="LDR Carbon: a new range of wall, floor and 10-inch cabinets with matching shelves, doors, plinths and cable management.">
+  <section class="c-hero">
+    <div class="wrap">
+      <img src="/brand/ldr-carbon-light.png" alt="LDR Carbon" width="233" height="84" class="c-logo" />
+      <p class="lede">A new generation of LDR cabinets in a charcoal finish, with a fit-out range designed alongside it: spare doors, plinths, vertical cable managers, baying and earthing kits.</p>
+      <nav class="c-jump" aria-label="Carbon range sections">
+        {rackGroups.map(([t]) => <a href={`#${t}`}>{TYPE_LABEL[t]}</a>)}
+        <a href="#fit-out">Fit-out</a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="notice c-status">Carbon is launching now. Pricing, stock and datasheets are being finalised; request a quote and your reseller will confirm availability and lead time.</p>
+
+    <section class="c-overview">
+      <div class="c-stat"><strong>{carbonRacks.filter((r) => r.type === 'wall').length}</strong><span>Wall cabinets · {ruSpan('wall')}</span><p>600 mm wide, 450 or 600 mm deep, glass front.</p></div>
+      <div class="c-stat"><strong>{carbonRacks.filter((r) => r.type === 'floor').length}</strong><span>Floor cabinets · {ruSpan('floor')}</span><p>600 or 800 mm wide, 600 to 1100 mm deep. Glass or mesh fronts.</p></div>
+      <div class="c-stat"><strong>{carbonRacks.filter((r) => r.type === 'mini').length}</strong><span>10" mini racks · {ruSpan('mini')}</span><p>For 10-inch gear in tight spaces.</p></div>
+      <div class="c-stat"><strong>{carbonAcc.length}</strong><span>Fit-out parts</span><p>Shelves, blanking, doors, plinths, cable and cooling parts.</p></div>
+    </section>
+
+    {rackGroups.map(([t, list]) => (
+      <section class="c-group" id={t}>
+        <div class="section-head"><h2>Carbon {TYPE_LABEL[t].toLowerCase()}</h2><a class="link-arrow" href={`/products?range=carbon&kind=rack&type=${t}`}>Filter & compare →</a></div>
+        <div class="grid grid--4">{list.map((p) => <ProductCard product={p} />)}</div>
+      </section>
+    ))}
+
+    <section class="c-group" id="fit-out">
+      <div class="section-head"><h2>Carbon fit-out</h2><a class="link-arrow" href="/products?range=carbon&kind=accessory">All Carbon accessories →</a></div>
+      {accGroups.map((g) => (
+        <div class="acc-block">
+          <h3>{GROUP_LABEL[g]}</h3>
+          <div class="grid grid--4">{carbonAcc.filter((a) => a.group === g).map((p) => <ProductCard product={p} />)}</div>
+        </div>
+      ))}
+    </section>
+
+    <section class="c-cta">
+      <div>
+        <h2>Not sure which size?</h2>
+        <p class="muted">The Rack Builder sizes a Carbon cabinet from your equipment list and adds the matching fit-out.</p>
+      </div>
+      <a class="btn btn--primary" href="/rack-builder?range=carbon">Build a Carbon rack</a>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .c-hero { background: var(--charcoal); color: #fff; padding: clamp(48px, 7vw, 88px) 0; }
+  .c-logo { height: clamp(56px, 8vw, 84px); width: auto; margin-bottom: 24px; }
+  .c-hero .lede { color: #b9bcc2; }
+  .c-jump { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+  .c-jump a { color: #fff; text-decoration: none; border: 1px solid #4a4d53; border-radius: 999px; padding: 6px 14px; font-size: .875rem; }
+  .c-jump a:hover { border-color: #fff; }
+  .c-status { margin: 28px 0 0; }
+  .c-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin: 28px 0 16px; }
+  .c-stat { background: #fff; padding: 22px; display: grid; gap: 4px; align-content: start; }
+  .c-stat strong { font-size: 2.2rem; font-stretch: 112%; line-height: 1; }
+  .c-stat span { font-weight: 600; }
+  .c-stat p { margin: 4px 0 0; color: var(--muted); font-size: .875rem; }
+  @media (max-width: 860px) { .c-overview { grid-template-columns: 1fr 1fr; } }
+  .c-group { padding: 40px 0 8px; scroll-margin-top: 80px; }
+  .acc-block { margin-bottom: 28px; }
+  .acc-block h3 { font-size: 1rem; margin-bottom: 12px; }
+  .c-cta { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--line); margin: 40px 0 80px; padding-top: 40px; }
+  .c-cta h2 { margin-bottom: .2em; }
+  .c-cta p { margin: 0; }
+</style>

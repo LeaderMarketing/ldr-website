@@ -1,0 +1,132 @@
+---
+import '../styles/global.css';
+import { nav, site } from '../data/site';
+
+interface Props { title: string; description?: string; active?: string; kind?: 'rack' | 'accessory' }
+const { title, description = site.tagline, active, kind } = Astro.props;
+const fullTitle = title === 'LDR' ? 'LDR | Data racks & cabinets' : `${title} | LDR`;
+const path = Astro.url.pathname;
+// Links with a query (Racks / Accessories) share /products, so they're highlighted client-side.
+const isActive = (href: string) => active ? href.startsWith(active) : !href.includes('?') && href === path.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body data-kind={kind}>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap bar">
+        <a href="/" class="logo" aria-label="LDR home"><img src="/brand/ldr-light.png" alt="LDR" width="117" height="25" /></a>
+        <nav aria-label="Main" class="nav-desktop">
+          {nav.map((n) => <a href={n.href} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>)}
+        </nav>
+        <div class="bar-actions">
+          <form action="/products" class="search" role="search">
+            <label for="q" class="visually-hidden">Search products</label>
+            <input id="q" name="q" type="search" placeholder="Search SKU or product" autocomplete="off" />
+          </form>
+          <a class="btn btn--primary btn--small" href="/quote">Request a quote</a>
+          <details class="nav-mobile">
+            <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+            <nav aria-label="Mobile">
+              <form action="/products" role="search"><input name="q" type="search" class="input" placeholder="Search SKU or product" aria-label="Search products" /></form>
+              {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+              <a href="/quote">Request a quote</a>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <main id="main"><slot /></main>
+    <script is:inline>
+      (function () {
+        var kind = new URLSearchParams(location.search).get('kind');
+        var onProduct = /^\/products\/./.test(location.pathname);
+        document.querySelectorAll('.nav-desktop a[href^="/products?kind="]').forEach(function (a) {
+          var k = a.getAttribute('href').split('kind=')[1];
+          if ((location.pathname.replace(/\/$/, '') === '/products' && kind === k) ||
+              (onProduct && document.body.dataset.kind === k)) a.setAttribute('aria-current', 'page');
+        });
+      })();
+    </script>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <img src="/brand/ldr-light.png" alt="LDR" width="117" height="25" />
+            <p class="muted foot-blurb">LDR data racks and accessories are distributed in Australia by Leader Systems and sold through resellers and integrators.</p>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <a href="/products?kind=rack&type=wall">Wall cabinets</a>
+            <a href="/products?kind=rack&type=floor">Floor cabinets</a>
+            <a href="/carbon">Carbon range</a>
+            <a href="/products?kind=accessory">Accessories</a>
+          </div>
+          <div>
+            <h4>Plan</h4>
+            <a href="/rack-builder">Rack Builder</a>
+            <a href="/support#choosing">Choosing a rack</a>
+            <a href="/support#downloads">Datasheets</a>
+          </div>
+          <div>
+            <h4>Buy</h4>
+            <a href="/where-to-buy">Where to buy</a>
+            <a href="/quote">Request a quote</a>
+            <a href={site.tradePortal} rel="noopener">Leader trade portal ↗</a>
+            <a href="/about">About LDR</a>
+          </div>
+        </div>
+        <p class="foot-legal muted">© {new Date().getFullYear()} LDR · Leader Systems. Prices shown are RRP in AUD including GST and may change. Trade pricing via the Leader portal.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 12px; top: 12px; z-index: 100; background: #fff; padding: 8px 12px; border-radius: 6px; }
+  .site-header { position: sticky; top: 0; z-index: 50; background: var(--charcoal); color: #fff; border-bottom: 1px solid #000; }
+  .bar { display: flex; align-items: center; gap: 28px; height: 64px; }
+  .logo img { height: 22px; width: auto; }
+  .nav-desktop { display: flex; gap: 22px; }
+  .nav-desktop a { color: #c7c9ce; text-decoration: none; font-size: .9375rem; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+  .nav-desktop a:hover, .nav-desktop a[aria-current] { color: #fff; border-bottom-color: #fff; }
+  .bar-actions { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .search input { width: 210px; height: 36px; border-radius: var(--radius); border: 1px solid #3c3f45; background: #15161a; color: #fff; padding: 0 10px; font-size: .875rem; }
+  .search input::placeholder { color: #8a8d94; }
+  .nav-mobile { display: none; position: relative; }
+  .nav-mobile summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; }
+  .nav-mobile summary::-webkit-details-marker { display: none; }
+  .nav-mobile summary span { display: block; width: 20px; height: 2px; background: #fff; }
+  .nav-mobile nav { position: fixed; left: 0; right: 0; top: 64px; background: var(--charcoal); padding: 12px var(--gutter) 20px; display: grid; gap: 2px; border-top: 1px solid #333; }
+  .nav-mobile nav a { padding: 12px 0; text-decoration: none; border-bottom: 1px solid #2f3136; }
+  .nav-mobile nav form { margin-bottom: 8px; }
+  .nav-mobile nav .input { background: #15161a; border-color: #3c3f45; color: #fff; }
+  @media (max-width: 1080px) { .search { display: none; } }
+  @media (max-width: 900px) {
+    .nav-desktop { display: none; }
+    .nav-mobile { display: block; }
+    .bar-actions .btn { display: none; }
+  }
+  .site-footer { background: var(--charcoal); color: #e6e6e4; padding: 56px 0 28px; margin-top: 0; }
+  .foot-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 32px; }
+  .foot-grid h4 { font-size: .8125rem; text-transform: uppercase; letter-spacing: .08em; color: #9a9da4; margin-bottom: 12px; font-family: var(--font-mono); font-weight: 500; }
+  .foot-grid a { display: block; text-decoration: none; color: #e6e6e4; padding: 4px 0; font-size: .9375rem; }
+  .foot-grid a:hover { text-decoration: underline; }
+  .foot-grid img { height: 22px; width: auto; margin-bottom: 16px; }
+  .foot-blurb { max-width: 36ch; font-size: .9375rem; color: #a9acb3; }
+  .foot-legal { border-top: 1px solid #33353a; margin-top: 40px; padding-top: 20px; font-size: .8125rem; color: #8a8d94; }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-grid > div:first-child { grid-column: 1 / -1; } }
+</style>

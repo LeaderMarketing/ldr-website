@@ -1,0 +1,4454 @@
+{
+  "generated": "2026-11-24T06:18:06.830Z",
+  "count": 102,
+  "products": [
+    {
+      "sku": "RCLDR-SS450-4U-A",
+      "slug": "rcldr-ss450-4u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 4U Wall Mount Cabinet (600mm x 450mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR single section hanging cabinets of the mounting height 4U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "4U"
+        ],
+        [
+          "Total outer height",
+          "280 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "450 mm"
+        ],
+        [
+          "Mounting depth",
+          "400 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ],
+        [
+          "Packaging Dimensions",
+          "1x Carton, 110 mm x 635 mm x 485 mm"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "280 mmx620 mmx470 mm"
+        ],
+        [
+          "Shipping Weight",
+          "13 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 209,
+      "stock": {
+        "NSW": 42,
+        "VIC": 45,
+        "QLD": 50,
+        "SA": 26,
+        "WA": 24
+      },
+      "stockTotal": 187,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SS450-4U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-4U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-4U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-4U-A.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 4,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Single section",
+      "inBox": [],
+      "name": "4U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": 280,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": "RCLDR-SS450-4U-CARBON"
+    },
+    {
+      "sku": "RCLDR-SS450-4U-CARBON",
+      "slug": "rcldr-ss450-4u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "4U Carbon wall cabinet",
+      "ru": 4,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-SS450-4U-A"
+    },
+    {
+      "sku": "RCLDR-DS550-4U-A",
+      "slug": "rcldr-ds550-4u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 4U Hinged Wall Mount Cabinet (600mm x 550mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR two-section hanging cabinets RCLDR-DS550-4U-A are specifically designed for close circuit television, security alarm, and access control system installations. Their unique feature is quick and easy access to the back section of the cabinet, ensuring efficient maintenance and device management.",
+      "specs": [
+        [
+          "Nominal Height",
+          "4U (approximately 280 mm)."
+        ],
+        [
+          "Length",
+          "600 mm"
+        ],
+        [
+          "Width",
+          "550 mm"
+        ],
+        [
+          "Height",
+          "300 mm"
+        ],
+        [
+          "Mounting Depth",
+          "400 mm"
+        ],
+        [
+          "Product Weight",
+          "16 kg"
+        ],
+        [
+          "Color",
+          "Black"
+        ],
+        [
+          "Front Doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back Doors",
+          "Not applicable (n/a)"
+        ],
+        [
+          "Side Panels",
+          "Full steel, dismounted on latches with a lock assembly option."
+        ]
+      ],
+      "features": [
+        "Side Doors: Mounted on latches with a lock assembly option.",
+        "Frame Load Capacity: 60kg.",
+        "Protection Class: IP20 (Indoor protection).",
+        "Front Door: Glass with a lock."
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "620 mmx570 mmx300 mm ( Length xWidth x Height )"
+        ],
+        [
+          "Shipping Weight",
+          "17 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 309,
+      "stock": {
+        "NSW": 5,
+        "VIC": 5,
+        "QLD": 5,
+        "SA": 5,
+        "WA": 0
+      },
+      "stockTotal": 20,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-DS550-4U-A-Series-Double-Section-Wall-Mount-Cabinet-Data-Sheet-LDR.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-DS550-4U-A.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 4,
+      "width": 600,
+      "depth": 550,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Hinged (double section)",
+      "inBox": [],
+      "name": "4U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": null,
+      "loadKg": null,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS450-6U-A",
+      "slug": "rcldr-ss450-6u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 6U Wall Mount Cabinet (600mm x 450mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR single section hanging cabinets of the mounting height 6U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "6U"
+        ],
+        [
+          "Total outer height",
+          "380 mm"
+        ],
+        [
+          "Outer width",
+          "620 mm"
+        ],
+        [
+          "Outer depth",
+          "470 mm"
+        ],
+        [
+          "Mounting depth",
+          "400 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "380 mmx620 mmx470 mm"
+        ],
+        [
+          "Shipping Weight",
+          "15 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 289,
+      "stock": {
+        "NSW": 39,
+        "VIC": 46,
+        "QLD": 47,
+        "SA": 42,
+        "WA": 38
+      },
+      "stockTotal": 212,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 6,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Single section",
+      "inBox": [],
+      "name": "6U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": 380,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": "RCLDR-SS450-6U-CARBON"
+    },
+    {
+      "sku": "RCLDR-SS450-6U-A-W",
+      "slug": "rcldr-ss450-6u-a-w",
+      "range": "classic",
+      "leaderName": "LDR Assembled 6U Wall Mount Cabinet (600mm x 450mm) Glass Door - White Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR single section hanging cabinets of the mounting height 6U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "6U"
+        ],
+        [
+          "Total outer height",
+          "380 mm"
+        ],
+        [
+          "Outer width",
+          "620 mm"
+        ],
+        [
+          "Outer depth",
+          "470 mm"
+        ],
+        [
+          "Mounting depth",
+          "400 mm"
+        ],
+        [
+          "Colour",
+          "White"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "380 mmx620 mmx470 mm"
+        ],
+        [
+          "Shipping Weight",
+          "15 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 289,
+      "stock": {
+        "NSW": 10,
+        "VIC": 9,
+        "QLD": 20,
+        "SA": 8,
+        "WA": 10
+      },
+      "stockTotal": 57,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A-W_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A-W_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A-W_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-6U-A-W.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 6,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "White",
+      "style": "Single section",
+      "inBox": [],
+      "name": "6U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": 380,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": "RCLDR-SS450-6U-CARBON"
+    },
+    {
+      "sku": "RCLDR-SS450-6U-CARBON",
+      "slug": "rcldr-ss450-6u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "6U Carbon wall cabinet",
+      "ru": 6,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-SS450-6U-A"
+    },
+    {
+      "sku": "RCLDR-DS550-6U-A",
+      "slug": "rcldr-ds550-6u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 6U Hinged Wall Mount Cabinet (600mm x 550mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR two-section hanging cabinets are most often used in close circuit television, security alarm, and access control system installations, where quick and easy access to the back section of the cabinet is an important factor. Thanks to this, access to the back side of the mounted devices does not pose any difficulties.",
+      "specs": [
+        [
+          "Nominal height",
+          "6U"
+        ],
+        [
+          "Total outer height",
+          "360 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "550 mm"
+        ],
+        [
+          "Mounting depth",
+          "400 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "635 mm x 485 mm x 210 mm"
+        ],
+        [
+          "Shipping Weight",
+          "19 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 359,
+      "stock": {
+        "NSW": 9,
+        "VIC": 11,
+        "QLD": 12,
+        "SA": 12,
+        "WA": 11
+      },
+      "stockTotal": 55,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-DS550-6U-A-Series-Double-Section-Wall-Mount-Cabinet-Data-Sheet-LDR.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-DS550-6U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-DS550-6U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-DS550-6U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-DS550-6U-A.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 6,
+      "width": 600,
+      "depth": 550,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Hinged (double section)",
+      "inBox": [],
+      "name": "6U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": 360,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS600-6U-CARBON",
+      "slug": "rcldr-ss600-6u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "6U Carbon wall cabinet",
+      "ru": 6,
+      "width": 600,
+      "depth": 600,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS450-9U-A",
+      "slug": "rcldr-ss450-9u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 9U Wall Mount Cabinet (600mm x 450mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR single section hanging cabinets of the mounting height 9U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "9U"
+        ],
+        [
+          "Total outer height",
+          "500 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "450 mm"
+        ],
+        [
+          "Mounting depth",
+          "350 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "520 mm x 620 mm x 470 mm"
+        ],
+        [
+          "Shipping Weight",
+          "17 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 329,
+      "stock": {
+        "NSW": 24,
+        "VIC": 28,
+        "QLD": 28,
+        "SA": 24,
+        "WA": 25
+      },
+      "stockTotal": 129,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-SS450-9U-A-9U-600X450MM-SINGLE-SECTION-WALL-CABINET-DATA-SHEET-LDR.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 9,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Single section",
+      "inBox": [],
+      "name": "9U wall cabinet",
+      "mountDepth": 350,
+      "heightMm": 500,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": "RCLDR-SS450-9U-CARBON"
+    },
+    {
+      "sku": "RCLDR-SS450-9U-A-W",
+      "slug": "rcldr-ss450-9u-a-w",
+      "range": "classic",
+      "leaderName": "LDR Assembled 9U Wall Mount Cabinet (600mm x 450mm) Glass Door - White Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR single section hanging cabinets of the mounting height 9U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "9U"
+        ],
+        [
+          "Total outer height",
+          "500 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "450 mm"
+        ],
+        [
+          "Mounting depth",
+          "350 mm"
+        ],
+        [
+          "Colour",
+          "White"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "520 mm x 620 mm x 470 mm"
+        ],
+        [
+          "Shipping Weight",
+          "17 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 329,
+      "stock": {
+        "NSW": 9,
+        "VIC": 9,
+        "QLD": 20,
+        "SA": 7,
+        "WA": 10
+      },
+      "stockTotal": 55,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-SS450-9U-A-9U-600X450MM-SINGLE-SECTION-WALL-CABINET-DATA-SHEET-LDR.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A-W_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A-W_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A-W_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-SS450-9U-A-W.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 9,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "White",
+      "style": "Single section",
+      "inBox": [],
+      "name": "9U wall cabinet",
+      "mountDepth": 350,
+      "heightMm": 500,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": "RCLDR-SS450-9U-CARBON"
+    },
+    {
+      "sku": "RCLDR-SS450-9U-CARBON",
+      "slug": "rcldr-ss450-9u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "9U Carbon wall cabinet",
+      "ru": 9,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-SS450-9U-A"
+    },
+    {
+      "sku": "RCLDR-DS550-9U-A",
+      "slug": "rcldr-ds550-9u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 9U Hinged Wall Mount Cabinet (600mm x 550mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR two-section hanging cabinets are most often used in close circuit television, security alarm, and access control system installations, where quick and easy access to the back section of the cabinet is an important factor. Thanks to this, access to the back side of the mounted devices does not pose any difficulties.",
+      "specs": [
+        [
+          "Nominal height",
+          "9U"
+        ],
+        [
+          "Total outer height",
+          "500 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "550 mm"
+        ],
+        [
+          "Mounting depth",
+          "400 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "620 mm x 570 mm x 530 mm"
+        ],
+        [
+          "Shipping Weight",
+          "21k"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 469,
+      "stock": {
+        "NSW": 22,
+        "VIC": 22,
+        "QLD": 24,
+        "SA": 23,
+        "WA": 17
+      },
+      "stockTotal": 108,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-DS550-9U-A-Series-Double-Section-Wall-Mount-Cabinet-Data-Sheet-LDR-1.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-DS550-9U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-DS550-9U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-DS550-9U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-DS550-9U-A.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 9,
+      "width": 600,
+      "depth": 550,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Hinged (double section)",
+      "inBox": [],
+      "name": "9U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": 500,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS600-9U-CARBON",
+      "slug": "rcldr-ss600-9u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "9U Carbon wall cabinet",
+      "ru": 9,
+      "width": 600,
+      "depth": 600,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS450-12U-CARBON",
+      "slug": "rcldr-ss450-12u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "12U Carbon wall cabinet",
+      "ru": 12,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS600-12U-CARBON",
+      "slug": "rcldr-ss600-12u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "12U Carbon wall cabinet",
+      "ru": 12,
+      "width": 600,
+      "depth": 600,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SS450-18U-A",
+      "slug": "rcldr-ss450-18u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 18U Wall Mount Cabinet (600mm x 450mm) Glass Door - Black Metal Construction - Top Fan Vents - Side Access Panels",
+      "summary": "The LDR single section hanging  cabinets of the mounting height 18U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "18U"
+        ],
+        [
+          "Total outer height",
+          "900 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "450 mm"
+        ],
+        [
+          "Mounting depth",
+          "400 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "60 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "n/a"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 60kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "920 mm x 620 mm x 470 mm"
+        ],
+        [
+          "Shipping Weight",
+          "26 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 369,
+      "stock": {
+        "NSW": 10,
+        "VIC": 9,
+        "QLD": 3,
+        "SA": 0,
+        "WA": 4
+      },
+      "stockTotal": 26,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SS450-18U-A.jpg",
+      "gallery": [],
+      "warrantyMonths": 0,
+      "isNew": false,
+      "kind": "rack",
+      "type": "wall",
+      "ru": 18,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Black",
+      "style": "Single section",
+      "inBox": [],
+      "name": "18U wall cabinet",
+      "mountDepth": 400,
+      "heightMm": 900,
+      "loadKg": 60,
+      "standard": "19",
+      "equivalent": "RCLDR-SS450-18U-CARBON"
+    },
+    {
+      "sku": "RCLDR-SS450-18U-CARBON",
+      "slug": "rcldr-ss450-18u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "wall",
+      "name": "18U Carbon wall cabinet",
+      "ru": 18,
+      "width": 600,
+      "depth": 450,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-SS450-18U-A"
+    },
+    {
+      "sku": "RCLDR-FS600-18U-CARBON",
+      "slug": "rcldr-fs600-18u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "18U Carbon floor cabinet",
+      "ru": 18,
+      "width": 600,
+      "depth": 600,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FS800-18U-A",
+      "slug": "rcldr-fs800-18u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 18U Server Rack Cabinet (600mm x 800mm) Glass Door, 1x 8-Port PDU, 1x 4-Way Fan, 2x Fixed Shelves - Black Metal Construction",
+      "summary": "The LDR single section cabinets of the mounting height 18U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal height",
+          "18U"
+        ],
+        [
+          "Total outer height",
+          "820 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "900 mm"
+        ],
+        [
+          "Mounting depth",
+          "800 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "800 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "Solid with a lock"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "4 Way Fan, 8-Port PDU & Two Shelves Included",
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 800kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "1000 mm x 620 mm x 820 mm"
+        ],
+        [
+          "Shipping Weight",
+          "56 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 999,
+      "stock": {
+        "NSW": 0,
+        "VIC": 3,
+        "QLD": 0,
+        "SA": 1,
+        "WA": 0
+      },
+      "stockTotal": 4,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-FS800-18U-A-18U-600x800mm-Network-Floor-Cabinet-Data-Sheet-LDR-4.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-FS800-18U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-FS800-18U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-FS800-18U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-FS800-18U-A.jpg"
+      ],
+      "warrantyMonths": 0,
+      "isNew": false,
+      "kind": "rack",
+      "type": "floor",
+      "ru": 18,
+      "width": 600,
+      "depth": 800,
+      "door": "glass",
+      "colour": "Black",
+      "style": null,
+      "inBox": [
+        "8-port PDU",
+        "4-way roof fan",
+        "2 fixed shelves"
+      ],
+      "name": "18U floor cabinet",
+      "mountDepth": 800,
+      "heightMm": 820,
+      "loadKg": 800,
+      "standard": "19",
+      "equivalent": "RCLDR-FS800-18U-CARBON"
+    },
+    {
+      "sku": "RCLDR-FS800-18U-CARBON",
+      "slug": "rcldr-fs800-18u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "18U Carbon floor cabinet",
+      "ru": 18,
+      "width": 600,
+      "depth": 800,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-FS800-18U-A"
+    },
+    {
+      "sku": "RCLDR-FS600-22U-CARBON",
+      "slug": "rcldr-fs600-22u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "22U Carbon floor cabinet",
+      "ru": 22,
+      "width": 600,
+      "depth": 600,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FS1000-22U-A",
+      "slug": "rcldr-fs1000-22u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 22U Server Rack Cabinet (L600mm x W1000mm x H1070mm), Glass Door,1x 8-Port PDU, 1x 4-Way Fan, 2x Fixed Shelves -Black Metal Construction",
+      "summary": "SKU: RCLDR-FS1000-22U-A The LDR single section cabinets of the mounting height 22U are most often used in close circuit television, security alarm, and access control system installations. Apart from security and organization, they provide quick access to the elements mounted inside.",
+      "specs": [
+        [
+          "Nominal Height",
+          "22U"
+        ],
+        [
+          "Total Outer Height",
+          "1070 mm"
+        ],
+        [
+          "Outer Length",
+          "600 mm"
+        ],
+        [
+          "Outer Width",
+          "1000 mm"
+        ],
+        [
+          "Mounting depth",
+          "900 mm"
+        ],
+        [
+          "Weight",
+          "52 kg"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "600 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "Solid with a lock"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "4 Way Fan, 8-Port PDU & Two Shelves Included",
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 800kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "1200 mm x 620 mm x 1200 mm"
+        ],
+        [
+          "Shipping Weight",
+          "21 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 1179,
+      "stock": {
+        "NSW": 0,
+        "VIC": 0,
+        "QLD": 0,
+        "SA": 1,
+        "WA": 1
+      },
+      "stockTotal": 2,
+      "datasheet": "https://content.leadermarketing.com.au/assets/uploads/RCLDR-FS1000-22U-A-22U-600x1000mm-RCLDR-FS1000-22U-A-Network-Floor-Cabinet-Data-Sheet-LDR.pdf",
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-FS1000-22U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-FS1000-22U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-FS1000-22U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-FS1000-22U-A.jpg"
+      ],
+      "warrantyMonths": 0,
+      "isNew": false,
+      "kind": "rack",
+      "type": "floor",
+      "ru": 22,
+      "width": 600,
+      "depth": 1000,
+      "door": "glass",
+      "colour": "Black",
+      "style": null,
+      "inBox": [
+        "8-port PDU",
+        "4-way roof fan",
+        "2 fixed shelves"
+      ],
+      "name": "22U floor cabinet",
+      "mountDepth": 900,
+      "heightMm": 1070,
+      "loadKg": 600,
+      "standard": "19",
+      "equivalent": "RCLDR-FS1000-22U-CARBON"
+    },
+    {
+      "sku": "RCLDR-FS1000-22U-CARBON",
+      "slug": "rcldr-fs1000-22u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "22U Carbon floor cabinet",
+      "ru": 22,
+      "width": 600,
+      "depth": 1000,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-FS1000-22U-A"
+    },
+    {
+      "sku": "RCLDR-FS800-27U-CARBON",
+      "slug": "rcldr-fs800-27u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "27U Carbon floor cabinet",
+      "ru": 27,
+      "width": 600,
+      "depth": 800,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FW1000-27U-CARBON",
+      "slug": "rcldr-fw1000-27u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "27U Carbon floor cabinet",
+      "ru": 27,
+      "width": 800,
+      "depth": 1000,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": "Wide (800 mm)",
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FS600-32U-CARBON",
+      "slug": "rcldr-fs600-32u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "32U Carbon floor cabinet",
+      "ru": 32,
+      "width": 600,
+      "depth": 600,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FS600-42U-CARBON",
+      "slug": "rcldr-fs600-42u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "42U Carbon floor cabinet",
+      "ru": 42,
+      "width": 600,
+      "depth": 600,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FS1000-42U-A",
+      "slug": "rcldr-fs1000-42u-a",
+      "range": "classic",
+      "leaderName": "LDR Assembled 42U Server Rack Cabinet (600mm x 1000mm) Glass Door, 1x 8-Port PDU, 1x 4-Way Fan, 2x Fixed Shelves - Black Metal Construction",
+      "summary": "SKU: RCLDR-FS1000-42U-A LDR 42U data communication cabinet of 600mm in width and 1000mm in dimensional depth. Featuring smoke grey glass door providing a sleek and professional look.",
+      "specs": [
+        [
+          "Nominal height",
+          "42U"
+        ],
+        [
+          "Total outer height",
+          "1950 mm"
+        ],
+        [
+          "Outer width",
+          "600 mm"
+        ],
+        [
+          "Outer depth",
+          "1000 mm"
+        ],
+        [
+          "Mounting depth",
+          "900 mm"
+        ],
+        [
+          "Colour",
+          "Black"
+        ],
+        [
+          "Maximum load capacity",
+          "800 kg"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Front doors",
+          "Glass with a lock"
+        ],
+        [
+          "Back doors",
+          "Solid with a lock"
+        ],
+        [
+          "Side panels",
+          "Full steel dismounted on latches with a lock assembly option"
+        ]
+      ],
+      "features": [
+        "4 Way Fan, 8-Port PDU & Two Shelves Included",
+        "Side doors mounted on latches with a lock assembly option",
+        "A frame with a load capacity of 800kg",
+        "Protection class IP20",
+        "Front door - glass"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "2000 mm x 620 mm x 1200 mm"
+        ],
+        [
+          "Shipping Weight",
+          "122 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 2255,
+      "stock": {
+        "NSW": 3,
+        "VIC": 3,
+        "QLD": 1,
+        "SA": 3,
+        "WA": 1
+      },
+      "stockTotal": 11,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-FS1000-42U-A_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-FS1000-42U-A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-FS1000-42U-A_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-FS1000-42U-A.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "floor",
+      "ru": 42,
+      "width": 600,
+      "depth": 1000,
+      "door": "glass",
+      "colour": "Black",
+      "style": null,
+      "inBox": [
+        "8-port PDU",
+        "4-way roof fan",
+        "2 fixed shelves"
+      ],
+      "name": "42U floor cabinet",
+      "mountDepth": 900,
+      "heightMm": 1950,
+      "loadKg": 800,
+      "standard": "19",
+      "equivalent": "RCLDR-FS1000-42U-CARBON"
+    },
+    {
+      "sku": "RCLDR-FS1000-42U-CARBON",
+      "slug": "rcldr-fs1000-42u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "42U Carbon floor cabinet",
+      "ru": 42,
+      "width": 600,
+      "depth": 1000,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-FS1000-42U-A"
+    },
+    {
+      "sku": "RCLDR-FW1000-42U-CARBON",
+      "slug": "rcldr-fw1000-42u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "42U Carbon floor cabinet",
+      "ru": 42,
+      "width": 800,
+      "depth": 1000,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": "Wide (800 mm)",
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FW1000-45U-CARBON",
+      "slug": "rcldr-fw1000-45u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "45U Carbon floor cabinet",
+      "ru": 45,
+      "width": 800,
+      "depth": 1000,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": "Wide (800 mm)",
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FS1070-45U-CARBON",
+      "slug": "rcldr-fs1070-45u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "45U Carbon floor cabinet",
+      "ru": 45,
+      "width": 600,
+      "depth": 1100,
+      "door": "mesh",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-FWMAX-47U-CARBON",
+      "slug": "rcldr-fwmax-47u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "floor",
+      "name": "47U Carbon floor cabinet",
+      "ru": 47,
+      "width": 800,
+      "depth": 1070,
+      "door": null,
+      "colour": "Charcoal",
+      "style": "Wide (800 mm)",
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-MR10-4U-CARBON",
+      "slug": "rcldr-mr10-4u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "mini",
+      "name": "4U Carbon 10\" mini rack",
+      "ru": 4,
+      "width": null,
+      "depth": null,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "10",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-MR10-6U-CARBON",
+      "slug": "rcldr-mr10-6u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "mini",
+      "name": "6U Carbon 10\" mini rack",
+      "ru": 6,
+      "width": null,
+      "depth": null,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "10",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-MR10-9U-CARBON",
+      "slug": "rcldr-mr10-9u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "mini",
+      "name": "9U Carbon 10\" mini rack",
+      "ru": 9,
+      "width": null,
+      "depth": null,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "10",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-WB-FT",
+      "slug": "rcldr-wb-ft",
+      "range": "classic",
+      "leaderName": "LDR Assembled 5U Flush Wall Mount Vertical Cabinet (570mm x 250mm) - 4U Rack For Gear & 2U Mount For Patch Panels - Black Metal Construction",
+      "summary": "LDR Assembled 5U Flush Wall Mount Vertical Cabinet (570mm x 250mm) - Black Metal Construction The LDR 5U Vertical Wall Mount Cabinet is perfect for saving space in small environments. It can house 19” networking equipment up to 400mm deep.",
+      "specs": [
+        [
+          "Nominal height",
+          "5U"
+        ],
+        [
+          "Product Length",
+          "550 mm"
+        ],
+        [
+          "Product Width",
+          "570 mm"
+        ],
+        [
+          "Product Height",
+          "250 mm"
+        ],
+        [
+          "Product Weight",
+          "14 kg"
+        ],
+        [
+          "Internal Mounting Depth",
+          "220 mm"
+        ],
+        [
+          "Protection class",
+          "IP20"
+        ],
+        [
+          "Load Capacity",
+          "35 kg"
+        ]
+      ],
+      "features": [
+        "Vertical Mounting Layout Allowing A More Compact Rack",
+        "Protection class IP20",
+        "Front door - Solid Metal"
+      ],
+      "shipping": [
+        [
+          "Shipping Dimensions",
+          "570 mm x 590 mm x 270 mm"
+        ],
+        [
+          "Shipping Weight",
+          "15 kg"
+        ],
+        [
+          "Carton",
+          "1pc/box"
+        ]
+      ],
+      "rrp": 389,
+      "stock": {
+        "NSW": 5,
+        "VIC": 7,
+        "QLD": 5,
+        "SA": 3,
+        "WA": 1
+      },
+      "stockTotal": 21,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-WB-FT_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-WB-FT_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-WB-FT_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-WB-FT.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "vertical",
+      "ru": 5,
+      "width": 570,
+      "depth": 250,
+      "door": null,
+      "colour": "Black",
+      "style": null,
+      "inBox": [],
+      "name": "5U vertical wall cabinet",
+      "mountDepth": 220,
+      "heightMm": 250,
+      "loadKg": 35,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-WV250-5U-CARBON",
+      "slug": "rcldr-wv250-5u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "vertical",
+      "name": "5U Carbon vertical wall cabinet",
+      "ru": 5,
+      "width": 570,
+      "depth": 250,
+      "door": "glass",
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-OF150-3U",
+      "slug": "rcldr-of150-3u",
+      "range": "classic",
+      "leaderName": "LDR Open Frame 3U Vertical Wall Mount Frame (500mm x 150mm) - Black Metal Construction",
+      "summary": "LDR Wall Mount Vertical Open Frame Rack",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 49,
+      "stock": {
+        "NSW": 7,
+        "VIC": 21,
+        "QLD": 11,
+        "SA": 9,
+        "WA": 0
+      },
+      "stockTotal": 48,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-OF150-3U.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "open-frame",
+      "ru": 3,
+      "width": 500,
+      "depth": 150,
+      "door": null,
+      "colour": "Black",
+      "style": null,
+      "inBox": [],
+      "name": "3U open-frame rack",
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-OF300-6U",
+      "slug": "rcldr-of300-6u",
+      "range": "classic",
+      "leaderName": "LDR Open Frame 6U Wall Mount Frame (500mm x 300mm) - Black Metal Construction",
+      "summary": "Get your network equipment organised with a LDR wall-mount open-frame rack. The simplest way to mount network equipment, patch-panels and more, just attach the solid steel rack to a wall and mount any standard 19\" equipment up to a total of 6RU in height.",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 129,
+      "stock": {
+        "NSW": 10,
+        "VIC": 10,
+        "QLD": 11,
+        "SA": 12,
+        "WA": 6
+      },
+      "stockTotal": 49,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-OF300-6U.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "open-frame",
+      "ru": 6,
+      "width": 500,
+      "depth": 300,
+      "door": null,
+      "colour": "Black",
+      "style": null,
+      "inBox": [],
+      "name": "6U open-frame rack",
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-2P600-22U-FP",
+      "slug": "rcldr-2p600-22u-fp",
+      "range": "classic",
+      "leaderName": "LDR Flat Packed 22U 2-Post Open Frame Rack, Black Metal Construction",
+      "summary": "LDR Flat Packed 22U 2 Post Open Frame Rack Product Length: 1050mm Product Width: 600mm Product Height: 600mm Product Weight: 16kgs",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 339,
+      "stock": {
+        "NSW": 4,
+        "VIC": 3,
+        "QLD": 2,
+        "SA": 2,
+        "WA": 1
+      },
+      "stockTotal": 12,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-2P600-22U-FP_2.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-2P600-22U-FP_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-2P600-22U-FP_4.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-2P600-22U-FP.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "open-frame",
+      "ru": 22,
+      "width": null,
+      "depth": null,
+      "door": null,
+      "colour": "Black",
+      "style": "2-post open frame",
+      "inBox": [],
+      "name": "22U open-frame rack",
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-WB-2U-CARBON",
+      "slug": "rcldr-wb-2u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "bracket",
+      "name": "2U Carbon fold-down wall bracket",
+      "ru": 2,
+      "width": null,
+      "depth": null,
+      "door": null,
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-WB-4U-CARBON",
+      "slug": "rcldr-wb-4u-carbon",
+      "range": "carbon",
+      "kind": "rack",
+      "type": "bracket",
+      "name": "4U Carbon fold-down wall bracket",
+      "ru": 4,
+      "width": null,
+      "depth": null,
+      "door": null,
+      "colour": "Charcoal",
+      "style": null,
+      "standard": "19",
+      "inBox": [],
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SN03-18U",
+      "slug": "rcldr-sn03-18u",
+      "range": "classic",
+      "leaderName": "LDR Assembled Soundproof 18U Cabinets ( Black and Wood Color), 3 Pcs Low Noise Fans,2pcs Side Panels, Lockable And Removable Barrel Locking.",
+      "summary": "LDR Assembled Soundproof 18U Cabinet (Black & Wood Finish) Equipped with 3 low-noise fans, 2 lockable and removable side panels, and secure barrel-type locking, this cabinet delivers both performance and aesthetics. When space or budget limitations make traditional server rooms impractical, the LDR Soundproof 18U Cabinet provides an ideal alternative.",
+      "specs": [],
+      "features": [
+        "19\" Soundproof Cabinet – 18U",
+        "Constructed with SPCC steel (RAL9005) and primary wood panels",
+        "Split front door with environmentally friendly wood finish",
+        "1 cm acoustic isolation material applied to all doors and panels for effective noise reduction",
+        "Rear door with integrated fan module area, fitted with 3 low-noise fans ( AU Plug 10A 250VAC)",
+        "Two lockable, removable side panels with barrel-type locks",
+        "Equipped with four heavy-duty castors and four adjustable levelling feet",
+        "Delivered fully assembled",
+        "MAX. STATIC LOAD : Up to 1000KG",
+        "Product Dimension (mm): W 750 x D 1040 x H 1091 ( Height 18U )",
+        "Wooden Case Dimension(mm): W 1165 x D 870 x H1270",
+        "Max Instal Distance:",
+        "NW/PC (KG): 185.10",
+        "GW/PC (KG):  211.00",
+        "CBM: 1.29"
+      ],
+      "shipping": [],
+      "rrp": 5500,
+      "stock": {
+        "NSW": 0,
+        "VIC": 0,
+        "QLD": 0,
+        "SA": 1,
+        "WA": 0
+      },
+      "stockTotal": 1,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SN03-18U.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "soundproof",
+      "ru": 18,
+      "width": null,
+      "depth": null,
+      "door": null,
+      "colour": "Black / wood",
+      "style": null,
+      "inBox": [
+        "Low-noise fans"
+      ],
+      "name": "18U soundproof cabinet",
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-SN03-24U",
+      "slug": "rcldr-sn03-24u",
+      "range": "classic",
+      "leaderName": "LDR Assembled Soundproof 24U Cabinets ( Black and Wood Color), 6 Pcs Low Noise Fans,2pcs Side Panels, Lockable And Removable Barrel Locking.",
+      "summary": "LDR Assembled Soundproof 24U Cabinet (Black & Wood Finish) Equipped with 6 Pcs  low-noise fans, 2 lockable and removable side panels, and secure barrel-type locking, this cabinet delivers both performance and aesthetics. When space or budget limitations make traditional server rooms impractical, the LDR Soundproof 24U Cabinet provides an ideal alternative.",
+      "specs": [],
+      "features": [
+        "19\" Soundproof Cabinet – 24U",
+        "Constructed with SPCC steel (RAL9005) and primary wood panels",
+        "Split front door with environmentally friendly wood finish",
+        "1 cm acoustic isolation material applied to all doors and panels for effective noise reduction",
+        "Rear door with integrated fan module area, fitted with 6 low-noise fans ( AU Plug 10A 250VAC)",
+        "Two lockable, removable side panels with barrel-type locks",
+        "Equipped with four heavy-duty castors and four adjustable levelling feet",
+        "Delivered fully assembled",
+        "MAX. STATIC LOAD : Up to 1000KG",
+        "Product Dimension(mm): W 750 x D 1040 x H 1358 ( Height 24U )",
+        "Wooden Case Dimension(mm): W 1160 x D 870 x H1530",
+        "Max Instal Distance:",
+        "NW/PC (KG): 197.80",
+        "GW/PC (KG):  250.50",
+        "CBM: 1.54"
+      ],
+      "shipping": [],
+      "rrp": 6600,
+      "stock": {
+        "NSW": 1,
+        "VIC": 0,
+        "QLD": 0,
+        "SA": 1,
+        "WA": 0
+      },
+      "stockTotal": 2,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-SN03-24U.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "rack",
+      "type": "soundproof",
+      "ru": 24,
+      "width": null,
+      "depth": null,
+      "door": null,
+      "colour": "Black / wood",
+      "style": null,
+      "inBox": [
+        "Low-noise fans"
+      ],
+      "name": "24U soundproof cabinet",
+      "mountDepth": null,
+      "heightMm": null,
+      "loadKg": null,
+      "standard": "19",
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BLANK-1U",
+      "slug": "rcldr-acc-blank-1u",
+      "range": "classic",
+      "leaderName": "LDR 1U 19\" Blanking Panel - Rack Mountable 19\" - Black Metal Construction",
+      "summary": "LDR 1RU Blanking Panel - Rack Mountable 19\"",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 19,
+      "stock": {
+        "NSW": 10,
+        "VIC": 20,
+        "QLD": 15,
+        "SA": 13,
+        "WA": 8
+      },
+      "stockTotal": 66,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANK-1U.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "blanking",
+      "name": "Blanking panel 1U",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BLANKT-1U",
+      "slug": "rcldr-acc-blankt-1u",
+      "range": "classic",
+      "leaderName": "LDR 1U 19\" Blanking Panel Snap-in - Tool-less - Rack Mountable 19\" - Black Metal Construction",
+      "summary": "LDR 1RU Blanking Panel - Rack Mountable 19\"",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 19,
+      "stock": {
+        "NSW": 33,
+        "VIC": 30,
+        "QLD": 10,
+        "SA": 10,
+        "WA": 16
+      },
+      "stockTotal": 99,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANKT-1U.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANKT-1U_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANKT-1U_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANKT-1U_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "blanking",
+      "name": "Tool-less snap-in blanking panel 1U",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BLANK10-1U-CARBON",
+      "slug": "rcldr-acc-blank10-1u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "blanking",
+      "name": "10\" blanking plate 1U",
+      "ru": 1,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "10"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BLANK-2U",
+      "slug": "rcldr-acc-blank-2u",
+      "range": "classic",
+      "leaderName": "LDR 2U 19\" Blanking Panel - Rack Mountable 19\" - Black Metal Construction",
+      "summary": "LDR 2RU Blanking Panel - Rack Mountable 19\"",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 19,
+      "stock": {
+        "NSW": 1,
+        "VIC": 23,
+        "QLD": 10,
+        "SA": 10,
+        "WA": 15
+      },
+      "stockTotal": 59,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANK-2U.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANK-2U_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANK-2U_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-BLANK-2U_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "blanking",
+      "name": "Blanking panel 2U",
+      "ru": 2,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BLANK-3U-CARBON",
+      "slug": "rcldr-acc-blank-3u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "blanking",
+      "name": "Blanking plate 3U",
+      "ru": 3,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BLANK-4U-CARBON",
+      "slug": "rcldr-acc-blank-4u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "blanking",
+      "name": "Blanking plate 4U",
+      "ru": 4,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-HOOKBAR-CARBON",
+      "slug": "rcldr-acc-hookbar-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cable",
+      "name": "Hook-and-loop cable bar",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-ROOFTRAY-CARBON",
+      "slug": "rcldr-acc-rooftray-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cable",
+      "name": "Roof cable tray (ladder)",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-VCM-42U-CARBON",
+      "slug": "rcldr-acc-vcm-42u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cable",
+      "name": "Vertical cable manager 42U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          42
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-VCM-45U-CARBON",
+      "slug": "rcldr-acc-vcm-45u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cable",
+      "name": "Vertical cable manager 45U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          45
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BRUSH-1U",
+      "slug": "rcldr-acc-brush-1u",
+      "range": "classic",
+      "leaderName": "LDR 1U 19\" Cable Management Brush Rail (Brush Panel) - Black Metal Construction",
+      "summary": "1RU 19\" Cable Management Brush Rail(brush panel),black color",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 19,
+      "stock": {
+        "NSW": 46,
+        "VIC": 38,
+        "QLD": 29,
+        "SA": 15,
+        "WA": 32
+      },
+      "stockTotal": 160,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-BRUSH-1U.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "cable",
+      "name": "Brush panel 1U",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-CABLEMT",
+      "slug": "rcldr-acc-cablemt",
+      "range": "classic",
+      "leaderName": "LDR 1U 19\" Cable Management Rail 24 Slot Shallow (Plastic) - 1U",
+      "summary": "LDR 1RU 19\" Cable Management Rail 24 Slot Shallow (Plastic)",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 19,
+      "stock": {
+        "NSW": 91,
+        "VIC": 136,
+        "QLD": 196,
+        "SA": 161,
+        "WA": 153
+      },
+      "stockTotal": 737,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-CABLEMT.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "cable",
+      "name": "Cable management rail 1U, 24 slot",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DRING-2U-CARBON",
+      "slug": "rcldr-acc-dring-2u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cable",
+      "name": "D-ring rail with lid 2U",
+      "ru": 2,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-2FAN",
+      "slug": "rcldr-acc-2fan",
+      "range": "classic",
+      "leaderName": "LDR 2 Way Fan Kit - 2x Fans - Black - For Installation in LDR Hinged & Single Section Racks",
+      "summary": "LDR Dual Fan Kit, 2x 120mm Fans With 1.5m Power Cord AU Plug, Compatible with LDR Dual Section & Single Section Wall Mount Racks",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 64.9,
+      "stock": {
+        "NSW": 18,
+        "VIC": 20,
+        "QLD": 24,
+        "SA": 25,
+        "WA": 24
+      },
+      "stockTotal": 111,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-2FAN.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "cooling",
+      "name": "2-way fan kit for wall cabinets",
+      "ru": null,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "wall"
+        ],
+        "range": "classic"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-THERMO",
+      "slug": "rcldr-acc-thermo",
+      "range": "classic",
+      "leaderName": "LDR Auto FAN Thermostat, Din Rail Mounting (DIN15, DIN32, DIN35 Rails)",
+      "summary": "thermostat,mounting type and fixed on DIN15,DIN32,DIN35 rails",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 99,
+      "stock": {
+        "NSW": 5,
+        "VIC": 4,
+        "QLD": 1,
+        "SA": 0,
+        "WA": 1
+      },
+      "stockTotal": 11,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-THERMO.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "cooling",
+      "name": "Auto fan thermostat, DIN rail",
+      "ru": null,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-4FANROOF-CARBON",
+      "slug": "rcldr-acc-4fanroof-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cooling",
+      "name": "4-way roof fan kit (replacement)",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-FILTER-CARBON",
+      "slug": "rcldr-acc-filter-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "cooling",
+      "name": "Fan dust filter (replacement)",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-2FANRM",
+      "slug": "rcldr-acc-2fanrm",
+      "range": "classic",
+      "leaderName": "LDR 2 Way Rackmountable Fan Kit with power switch - 2x Fans - 1U Size - Black Metal Construction",
+      "summary": "19\" Rack mountable fan kit with 2 fans and an on/off switch",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 159,
+      "stock": {
+        "NSW": 10,
+        "VIC": 10,
+        "QLD": 13,
+        "SA": 10,
+        "WA": 11
+      },
+      "stockTotal": 54,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-2FANRM.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-2FANRM_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-2FANRM_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-2FANRM_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "cooling",
+      "name": "1U rack-mount fan kit, 2 fans with switch",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DOOR-G600-32U-CARBON",
+      "slug": "rcldr-acc-door-g600-32u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "doors",
+      "name": "Glass front door, 600 wide, 32U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          32
+        ],
+        "width": [
+          600
+        ],
+        "range": "carbon"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DOOR-G600-42U-CARBON",
+      "slug": "rcldr-acc-door-g600-42u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "doors",
+      "name": "Glass front door, 600 wide, 42U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          42
+        ],
+        "width": [
+          600
+        ],
+        "range": "carbon"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DOOR-G600-45U-CARBON",
+      "slug": "rcldr-acc-door-g600-45u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "doors",
+      "name": "Glass front door, 600 wide, 45U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          45
+        ],
+        "width": [
+          600
+        ],
+        "range": "carbon"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DOOR-G800-27U-CARBON",
+      "slug": "rcldr-acc-door-g800-27u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "doors",
+      "name": "Glass front door, 800 wide, 27U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          27
+        ],
+        "width": [
+          800
+        ],
+        "range": "carbon"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DOOR-G800-42U-CARBON",
+      "slug": "rcldr-acc-door-g800-42u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "doors",
+      "name": "Glass front door, 800 wide, 42U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          42
+        ],
+        "width": [
+          800
+        ],
+        "range": "carbon"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DOOR-G800-45U-CARBON",
+      "slug": "rcldr-acc-door-g800-45u-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "doors",
+      "name": "Glass front door, 800 wide, 45U",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "ru": [
+          45
+        ],
+        "width": [
+          800
+        ],
+        "range": "carbon"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-WHEEL",
+      "slug": "rcldr-acc-wheel",
+      "range": "classic",
+      "leaderName": "LDR 2\" PP Rack Caster Wheels 2x With Brakes & 2x Without Brakes - Pack of 4 Wheels Total",
+      "summary": "LDR 2\" PP Rack Wheels Without Brakes",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 49,
+      "stock": {
+        "NSW": 0,
+        "VIC": 0,
+        "QLD": 3,
+        "SA": 2,
+        "WA": 3
+      },
+      "stockTotal": 8,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-WHEEL.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-WHEEL_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-WHEEL_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-WHEEL_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "floor",
+      "name": "Caster wheels, pack of 4 (2 braked)",
+      "ru": null,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ]
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-BAYKIT-CARBON",
+      "slug": "rcldr-acc-baykit-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "floor",
+      "name": "Baying / joining kit",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PLINTH-60100-CARBON",
+      "slug": "rcldr-acc-plinth-60100-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "floor",
+      "name": "Floor plinth 100 mm, 600 × 1000",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "width": [
+          600
+        ],
+        "depth": [
+          1000
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PLINTH-6060-CARBON",
+      "slug": "rcldr-acc-plinth-6060-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "floor",
+      "name": "Floor plinth 100 mm, 600 × 600",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "width": [
+          600
+        ],
+        "depth": [
+          600
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PLINTH-6080-CARBON",
+      "slug": "rcldr-acc-plinth-6080-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "floor",
+      "name": "Floor plinth 100 mm, 600 × 800",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "width": [
+          600
+        ],
+        "depth": [
+          800
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PLINTH-80100-CARBON",
+      "slug": "rcldr-acc-plinth-80100-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "floor",
+      "name": "Floor plinth 100 mm, 800 × 1000",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "types": [
+          "floor"
+        ],
+        "width": [
+          800
+        ],
+        "depth": [
+          1000
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-CAGENUT-50-CARBON",
+      "slug": "rcldr-acc-cagenut-50-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "hardware",
+      "name": "M6 cage nuts, screws & washers (50 pack)",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-CAGETOOL-CARBON",
+      "slug": "rcldr-acc-cagetool-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "hardware",
+      "name": "Cage nut insertion/removal tool",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-EARTHKIT-CARBON",
+      "slug": "rcldr-acc-earthkit-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "hardware",
+      "name": "Earthing kit, bar and leads",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-LOCKSET-CARBON",
+      "slug": "rcldr-acc-lockset-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "hardware",
+      "name": "Spare lock and key set",
+      "ru": null,
+      "shelfDepth": null,
+      "outlets": null,
+      "fit": {
+        "standard": "19"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-DINRAIL",
+      "slug": "rcldr-acc-dinrail",
+      "range": "classic",
+      "leaderName": "LDR Rackmount Din Rail, Black Metal Construction, 35mm International Din Rail",
+      "summary": "LDR 483 x 128 x 61mm,35mm International DIN Full Rail. Black in color",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 89,
+      "stock": {
+        "NSW": 10,
+        "VIC": 10,
+        "QLD": 10,
+        "SA": 12,
+        "WA": 12
+      },
+      "stockTotal": 54,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-DINRAIL.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-DINRAIL_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-DINRAIL_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-DINRAIL_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "hardware",
+      "name": "Rack-mount 35 mm DIN rail",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": 35,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PP-24-6",
+      "slug": "rcldr-acc-pp-24-6",
+      "range": "classic",
+      "leaderName": "LDR 24 Port Cat6/5e Patch Panel Rack Mount - 1U",
+      "summary": "LDR 24 Port Cat6 Patch Panel Rack Mount",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 99,
+      "stock": {
+        "NSW": 53,
+        "VIC": 56,
+        "QLD": 0,
+        "SA": 31,
+        "WA": 20
+      },
+      "stockTotal": 160,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "patching",
+      "name": "Patch panel 24-port Cat6/5e, 1U",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PP-24-6A",
+      "slug": "rcldr-acc-pp-24-6a",
+      "range": "classic",
+      "leaderName": "LDR 24 Port Cat6A UTP Patch Panel Rack Mount - 1U",
+      "summary": "LDR 24 Port Cat6A UTP Patch Panel Rack Mount - 1U CAT6A Compatible Black in Colour Metal Construction 24x RJ45 Ports",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 189,
+      "stock": {
+        "NSW": 28,
+        "VIC": 30,
+        "QLD": 0,
+        "SA": 19,
+        "WA": 21
+      },
+      "stockTotal": 98,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6A.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6A_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6A_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PP-24-6A_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "patching",
+      "name": "Patch panel 24-port Cat6A UTP, 1U",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PDU10-10",
+      "slug": "rcldr-acc-pdu10-10",
+      "range": "classic",
+      "leaderName": "LDR 10-Port 10A Power Distribution Unit AU Approved - 10x 3-Pin AU/NZ Outlets/Slots - 1U Vertical Mount",
+      "summary": "LDR 10-Port 10A Power Distribution Unit AU Approved - 10x 3-Pin AU/NZ Outlets/Slots - 1U Vertical Mount 1RU 10 Way GPO Vertical 19\" Rack Mount PDU Power Rail This rack mount PDU (Power Distribution Unit) provides 10 Australian standardized outlets for equipment within an LDR network cabinet.",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 119,
+      "stock": {
+        "NSW": 8,
+        "VIC": 9,
+        "QLD": 10,
+        "SA": 24,
+        "WA": 13
+      },
+      "stockTotal": 64,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-10.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-10_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-10_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-10_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "power",
+      "name": "PDU 10-outlet, 10 A, vertical",
+      "ru": null,
+      "outlets": 10,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PDU10-8",
+      "slug": "rcldr-acc-pdu10-8",
+      "range": "classic",
+      "leaderName": "LDR 8-Port 10A Power Distribution Unit AU Approved - 8x 3-Pin AU/NZ Outlets/Slots - 1U Vertical Mount",
+      "summary": "LDR 8-Port 10A Power Distribution Unit AU Approved Product Features: Length: 603mm Width: 48.7mm Height: 45.8mm Weight: 1.36 kg Internal Mounting Depth: 46mm Protection Class: IP20",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 129,
+      "stock": {
+        "NSW": 10,
+        "VIC": 10,
+        "QLD": 0,
+        "SA": 0,
+        "WA": 0
+      },
+      "stockTotal": 20,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-8.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-8_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-8_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-8_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "power",
+      "name": "PDU 8-outlet, 10 A, vertical",
+      "ru": null,
+      "outlets": 8,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PDU10-9IEC",
+      "slug": "rcldr-acc-pdu10-9iec",
+      "range": "classic",
+      "leaderName": "LDR 9‑Port 10A IEC C13 Power Distribution Unit(PDU),AU Approved,1U Vertical Mount,Aluminum Material With Power Indicator,2m Power Cord with C14 Plug",
+      "summary": "LDR 9-Port 10A IEC C13 Power Distribution Unit(PDU),AU Approved,1U Vertical Mount,Aluminum Material With Power Indicator,2m Power Cord with C14 Plug,Vertical Rackmount",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 119,
+      "stock": {
+        "NSW": 15,
+        "VIC": 15,
+        "QLD": 10,
+        "SA": 10,
+        "WA": 3
+      },
+      "stockTotal": 53,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-9IEC.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-9IEC_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-9IEC_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-9IEC_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "power",
+      "name": "PDU 9 × IEC C13, 10 A, vertical",
+      "ru": null,
+      "outlets": 9,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PDU10-6",
+      "slug": "rcldr-acc-pdu10-6",
+      "range": "classic",
+      "leaderName": "LDR 6-Port 10A Power Distribution Unit AU Approved - 6x 3-Pin AU/NZ Outlets/Slots - 1U Horizontal Mount",
+      "summary": "LDR 6-Port 10A Power Distribution Unit AU Approved Product Features: Length: 482.5mm Width: 44.5mm Height: 44.5mm Weight1.05kg Internal Mounting Depth: 46mm Protection Class: IP20",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 119,
+      "stock": {
+        "NSW": 33,
+        "VIC": 39,
+        "QLD": 19,
+        "SA": 7,
+        "WA": 10
+      },
+      "stockTotal": 108,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-6.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-6_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-6_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-6_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "power",
+      "name": "PDU 6-outlet, 10 A, horizontal 1U",
+      "ru": 1,
+      "outlets": 6,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-PDU10-12",
+      "slug": "rcldr-acc-pdu10-12",
+      "range": "classic",
+      "leaderName": "LDR 12-Port 10A Power Distribution Unit AU Approved - 12x 3-Pin AU/NZ Outlets/Slots - 2U Horizontal Mount",
+      "summary": "LDR 12-Port 10A Power Distribution Unit AU Approved - 2U Horizontal Mount 2RU 12 Way GPO Horizontal 19\" Rack Mount PDU Power Rail This rack mount PDU (Power Distribution Unit) provides 12 Australian standardized outlets for equipment within an LDR network cabinet.",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 279,
+      "stock": {
+        "NSW": 0,
+        "VIC": 2,
+        "QLD": 7,
+        "SA": 5,
+        "WA": 13
+      },
+      "stockTotal": 27,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-PDU10-12.jpg",
+      "gallery": [],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "power",
+      "name": "PDU 12-outlet, 10 A, horizontal 2U",
+      "ru": 2,
+      "outlets": 12,
+      "shelfDepth": null,
+      "fit": {
+        "standard": "19"
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-ASHELF800",
+      "slug": "rcldr-acc-ashelf800",
+      "range": "classic",
+      "leaderName": "LDR Adjustable 1U Shelf Recommended For 19\" 445mm to 800mm Deep Racks - Black Metal Construction",
+      "summary": "LDR Adjustable Shelf 1RU Suitable For 445mm to 800mm Racks Product Length- 448mm Product Width -445mm Product Height -44mm Product Weight - 5.8kgs",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 119,
+      "stock": {
+        "NSW": 30,
+        "VIC": 8,
+        "QLD": 10,
+        "SA": 7,
+        "WA": 9
+      },
+      "stockTotal": 64,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-ASHELF800.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-ASHELF800_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-ASHELF800_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-ASHELF800_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Adjustable shelf 1U, 445–800 mm",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": 800,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          600,
+          800
+        ]
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-FSHELF275",
+      "slug": "rcldr-acc-fshelf275",
+      "range": "classic",
+      "leaderName": "LDR Fixed 1U 275mm Deep Shelf Recommended for 19\" 450/550mm Deep Cabinet - Black Metal Construction",
+      "summary": "LDR 275mm Deep Fixed Shelf for 450/550mm Deep Cabinet only, Compatible with all Wall Racks",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 35,
+      "stock": {
+        "NSW": 21,
+        "VIC": 20,
+        "QLD": 38,
+        "SA": 14,
+        "WA": 25
+      },
+      "stockTotal": 118,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF275.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF275_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF275_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF275_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Fixed shelf 1U, 275 mm",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": 275,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          450,
+          550
+        ]
+      },
+      "equivalent": "RCLDR-ACC-FSHELF275-CARBON"
+    },
+    {
+      "sku": "RCLDR-ACC-FSHELF350",
+      "slug": "rcldr-acc-fshelf350",
+      "range": "classic",
+      "leaderName": "LDR Fixed 1U 350mm Deep Shelf Recommended for 19\" 600mm Deep Cabinet - Black Metal Construction",
+      "summary": "LDR 350mm Deep Fixed Shelf for 600mm Deep Cabinet only",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 45,
+      "stock": {
+        "NSW": 19,
+        "VIC": 10,
+        "QLD": 10,
+        "SA": 9,
+        "WA": 9
+      },
+      "stockTotal": 57,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF350.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF350_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF350_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF350_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Fixed shelf 1U, 350 mm",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": 350,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          600,
+          600
+        ]
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-FSHELF550",
+      "slug": "rcldr-acc-fshelf550",
+      "range": "classic",
+      "leaderName": "LDR Fixed 1U 550mm Deep Shelf Recommended for 19\" 800mm Deep Cabinet - Black Metal Construction",
+      "summary": "LDR 550mm Deep Fixed Shelf for 800mm Deep Cabinet only",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 79,
+      "stock": {
+        "NSW": 10,
+        "VIC": 4,
+        "QLD": 4,
+        "SA": 2,
+        "WA": 1
+      },
+      "stockTotal": 21,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF550.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF550_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF550_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-FSHELF550_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Fixed shelf 1U, 550 mm",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": 550,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          800,
+          800
+        ]
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-SSHELF500",
+      "slug": "rcldr-acc-sshelf500",
+      "range": "classic",
+      "leaderName": "LDR Sliding 1U Shelf Recommended for 450mm to 600mm Deep Server Racks, Supports rail to rail depth of 365mm to 500mm",
+      "summary": "LDR Sliding Shelf 1RU for 450mm to 600mm Deep Server Racks,Supports rail to rail depth of 365mm to 500mm",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 169,
+      "stock": {
+        "NSW": 4,
+        "VIC": 10,
+        "QLD": 2,
+        "SA": 1,
+        "WA": 0
+      },
+      "stockTotal": 17,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-SSHELF500.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-SSHELF500_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-SSHELF500_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-SSHELF500_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Sliding shelf 1U, 500 mm",
+      "ru": 1,
+      "outlets": null,
+      "shelfDepth": 500,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          450,
+          600
+        ]
+      },
+      "equivalent": "RCLDR-ACC-SSHELF500-CARBON"
+    },
+    {
+      "sku": "RCLDR-ACC-FSHELF10IN-CARBON",
+      "slug": "rcldr-acc-fshelf10in-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "10\" fixed shelf 1U, 200 mm",
+      "ru": 1,
+      "shelfDepth": 200,
+      "outlets": null,
+      "fit": {
+        "standard": "10"
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-FSHELF275-CARBON",
+      "slug": "rcldr-acc-fshelf275-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Fixed shelf 1U, 275 mm",
+      "ru": 1,
+      "shelfDepth": 275,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          450,
+          550
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-ACC-FSHELF275"
+    },
+    {
+      "sku": "RCLDR-ACC-FSHELF750-CARBON",
+      "slug": "rcldr-acc-fshelf750-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Fixed shelf 1U, 750 mm",
+      "ru": 1,
+      "shelfDepth": 750,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          1000,
+          1100
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-SSHELF500-CARBON",
+      "slug": "rcldr-acc-sshelf500-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Sliding shelf 1U, 500 mm",
+      "ru": 1,
+      "shelfDepth": 500,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          600,
+          800
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-ACC-SSHELF500"
+    },
+    {
+      "sku": "RCLDR-ACC-SSHELF750-CARBON",
+      "slug": "rcldr-acc-sshelf750-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Sliding shelf 1U, 750 mm",
+      "ru": 1,
+      "shelfDepth": 750,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          1000,
+          1100
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-CSHELF275",
+      "slug": "rcldr-acc-cshelf275",
+      "range": "classic",
+      "leaderName": "LDR Cantilever 2U 275mm Deep Shelf Recommended for 19\" 450/550mm Deep Cabinet - Black Metal Contruction",
+      "summary": "LDR Cantilever 2RU 275mm Deep Fixed Shelf Suitable with 19' , Suitable for 450mm Deep Cabinet and above",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 49,
+      "stock": {
+        "NSW": 45,
+        "VIC": 56,
+        "QLD": 50,
+        "SA": 46,
+        "WA": 19
+      },
+      "stockTotal": 216,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF275.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF275_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF275_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF275_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Cantilever shelf 2U, 275 mm",
+      "ru": 2,
+      "outlets": null,
+      "shelfDepth": 275,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          450,
+          550
+        ]
+      },
+      "equivalent": "RCLDR-ACC-CSHELF275-CARBON"
+    },
+    {
+      "sku": "RCLDR-ACC-CSHELF300",
+      "slug": "rcldr-acc-cshelf300",
+      "range": "classic",
+      "leaderName": "LDR Cantilever 2U 300mm Deep Shelf Recommended for 19' 600mm Deep Cabinet - Black Metal Contruction",
+      "summary": "LDR Cantilever 2RU 300mm Deep Fixed Shelf Suitable with 19' 600mm Deep Cabinet only (compatible with Ubiquiti ES/US-8-150W)",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 59,
+      "stock": {
+        "NSW": 12,
+        "VIC": 12,
+        "QLD": 14,
+        "SA": 8,
+        "WA": 12
+      },
+      "stockTotal": 58,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF300.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF300_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF300_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF300_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Cantilever shelf 2U, 300 mm",
+      "ru": 2,
+      "outlets": null,
+      "shelfDepth": 300,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          600,
+          600
+        ]
+      },
+      "equivalent": "RCLDR-ACC-CSHELF300-CARBON"
+    },
+    {
+      "sku": "RCLDR-ACC-CSHELF452",
+      "slug": "rcldr-acc-cshelf452",
+      "range": "classic",
+      "leaderName": "LDR Cantilever 2U Shelf, 452mm Depth, Ideal for 19\" 1000mm Deep Cabinets - Black Metal Construction",
+      "summary": "LDR Cantilever 2RU 452mm Deep Fixed Shelf Suitable with 19' 1000mm Deep Cabinet only (compatible with Ubiquiti ES/US-8-150W)",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": 79,
+      "stock": {
+        "NSW": 19,
+        "VIC": 18,
+        "QLD": 20,
+        "SA": 18,
+        "WA": 20
+      },
+      "stockTotal": 95,
+      "datasheet": null,
+      "image": "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF452.jpg",
+      "gallery": [
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF452_2.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF452_3.jpg",
+        "https://www.leadersystems.com.au/Images/RCLDR-ACC-CSHELF452_4.jpg"
+      ],
+      "warrantyMonths": 12,
+      "isNew": false,
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Cantilever shelf 2U, 452 mm",
+      "ru": 2,
+      "outlets": null,
+      "shelfDepth": 452,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          1000,
+          1000
+        ]
+      },
+      "equivalent": null
+    },
+    {
+      "sku": "RCLDR-ACC-CSHELF275-CARBON",
+      "slug": "rcldr-acc-cshelf275-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Cantilever shelf 2U, 275 mm",
+      "ru": 2,
+      "shelfDepth": 275,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          450,
+          550
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-ACC-CSHELF275"
+    },
+    {
+      "sku": "RCLDR-ACC-CSHELF300-CARBON",
+      "slug": "rcldr-acc-cshelf300-carbon",
+      "range": "carbon",
+      "kind": "accessory",
+      "group": "shelves",
+      "name": "Cantilever shelf 2U, 300 mm",
+      "ru": 2,
+      "shelfDepth": 300,
+      "outlets": null,
+      "fit": {
+        "standard": "19",
+        "depthRange": [
+          600,
+          600
+        ]
+      },
+      "summary": "",
+      "specs": [],
+      "features": [],
+      "shipping": [],
+      "rrp": null,
+      "stock": null,
+      "stockTotal": null,
+      "datasheet": null,
+      "image": null,
+      "gallery": [],
+      "warrantyMonths": null,
+      "isNew": true,
+      "equivalent": "RCLDR-ACC-CSHELF300"
+    }
+  ]
+}

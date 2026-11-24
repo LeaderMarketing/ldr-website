@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { racks, accessories, bySku, products } from '../lib/catalog';
+
+const count = (f: (p: (typeof products)[number]) => boolean) => products.filter(f).length;
+const categories = [
+  { title: 'Wall cabinets', href: '/products?kind=rack&type=wall', img: 'RCLDR-SS450-9U-A',
+    text: '4U to 18U. Single-section and hinged, 450 to 600 mm deep.', n: count((p) => p.kind === 'rack' && p.type === 'wall') },
+  { title: 'Floor cabinets', href: '/products?kind=rack&type=floor', img: 'RCLDR-FS1000-42U-A',
+    text: '18U to 47U. 600 or 800 mm wide, up to 1100 mm deep.', n: count((p) => p.kind === 'rack' && p.type === 'floor') },
+  { title: 'Compact & open frame', href: '/products?kind=rack&type=mini,vertical,open-frame,bracket', img: 'RCLDR-WB-FT',
+    text: '10" mini racks, vertical cabinets, brackets and open frames.', n: count((p) => p.kind === 'rack' && ['mini', 'vertical', 'open-frame', 'bracket'].includes(p.type)) },
+  { title: 'Accessories', href: '/products?kind=accessory', img: 'RCLDR-ACC-PDU10-6',
+    text: 'Shelves, PDUs, patch panels, blanking, cooling and fit-out.', n: accessories.length },
+];
+const featured = ['RCLDR-SS450-9U-A', 'RCLDR-DS550-6U-A', 'RCLDR-FS800-18U-A', 'RCLDR-FS1000-42U-A']
+  .map((s) => bySku.get(s)!).filter(Boolean);
+const carbonRacks = racks.filter((r) => r.range === 'carbon').length;
+const carbonAcc = accessories.filter((a) => a.range === 'carbon').length;
+const carbonOf = (t: string) => racks.filter((r) => r.range === 'carbon' && r.type === t).length;
+const img = (sku: string) => bySku.get(sku)?.image;
+---
+<Base title="LDR" description="LDR wall and floor data cabinets, 10-inch mini racks and rack accessories. Stocked by Leader Systems and sold through Australian resellers.">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">LDR data racks</span>
+        <h1>Racks and cabinets for every comms room.</h1>
+        <p class="lede">Wall cabinets from 4U, floor cabinets up to 47U, and the shelves, power and cable management to fit them out. Distributed by Leader Systems through Australian resellers.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="/products?kind=rack">Browse racks</a>
+          <a class="btn btn--secondary" href="/rack-builder">Find the right rack</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img src={img('RCLDR-SS450-6U-A')} alt="" class="hv hv-1" />
+        <img src={img('RCLDR-FS800-18U-A')} alt="" class="hv hv-2" />
+        <img src={img('RCLDR-FS1000-42U-A')} alt="" class="hv hv-3" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Shop by type</h2><a class="link-arrow" href="/products">All {products.length} products →</a></div>
+      <div class="grid grid--4">
+        {categories.map((c) => (
+          <a href={c.href} class="cat">
+            <div class="cat-img"><img src={img(c.img)} alt="" loading="lazy" onerror="this.remove()" /></div>
+            <div class="cat-body">
+              <h3>{c.title} <span class="cat-n">{c.n}</span></h3>
+              <p>{c.text}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap builder-teaser">
+      <div>
+        <span class="eyebrow">Rack Builder</span>
+        <h2>Tell us what's going in the rack. We'll match the cabinet.</h2>
+        <p class="lede">Pick where it's going and the equipment you're housing. The builder sizes the cabinet with room to grow, checks the depth, and adds the shelves, power and blanking panels that fit. You get a parts list to send to your reseller.</p>
+        <a class="btn btn--primary" href="/rack-builder">Start the Rack Builder</a>
+      </div>
+      <ol class="steps">
+        <li><strong>Where it's going</strong><span>Wall, floor or a compact 10" space</span></li>
+        <li><strong>What's going in</strong><span>Switches, patch panels, NVRs, servers, UPS</span></li>
+        <li><strong>Your matched rack</strong><span>Recommended SKU, alternatives and a fit-out list</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--dark carbon-band">
+    <div class="wrap carbon-grid">
+      <div>
+        <img src="/brand/ldr-carbon-light.png" alt="LDR Carbon" class="carbon-logo" width="233" height="84" />
+        <p class="lede">The new Carbon range: {carbonRacks} cabinets from 2U brackets to a 47U floor rack, with {carbonAcc} matching fit-out parts including spare doors, plinths and vertical cable managers.</p>
+        <a class="btn btn--secondary" href="/carbon">Explore Carbon</a>
+      </div>
+      <ul class="carbon-facts">
+        <li><strong>{carbonOf('wall')}</strong><span>wall cabinets, 4U–18U</span></li>
+        <li><strong>{carbonOf('floor')}</strong><span>floor cabinets, 18U–47U</span></li>
+        <li><strong>{carbonOf('mini')}</strong><span>10" mini racks</span></li>
+        <li><strong>{carbonAcc}</strong><span>fit-out parts</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Popular cabinets</h2><a class="link-arrow" href="/products?kind=rack">All racks →</a></div>
+      <div class="grid grid--4">{featured.map((p) => <ProductCard product={p} />)}</div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap buy">
+      <div>
+        <h2>Buying LDR</h2>
+        <p class="lede">LDR is sold through resellers and integrators, supplied from Leader Systems warehouses in Adelaide, Brisbane, Melbourne, Perth and Sydney. Already have a Leader account? Order directly through the trade portal.</p>
+      </div>
+      <div class="buy-actions">
+        <a class="btn btn--primary" href="/where-to-buy">Where to buy</a>
+        <a class="btn btn--secondary" href="/quote">Request a quote</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { background: var(--charcoal); color: #fff; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 7vw, 96px); }
+  .hero .eyebrow { color: #9a9da4; }
+  .hero .lede { color: #b9bcc2; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .hero-visual { position: relative; height: 420px; background: #fff; border-radius: var(--radius-lg); display: flex; align-items: flex-end; justify-content: center; gap: 2%; padding: 32px 28px 28px; overflow: hidden; }
+  .hero-visual::after { content: ''; position: absolute; left: 6%; right: 6%; bottom: 26px; height: 1px; background: var(--line); }
+  .hv { position: relative; z-index: 1; object-fit: contain; object-position: bottom; mix-blend-mode: multiply; }
+  .hv-1 { width: 36%; height: 50%; }
+  .hv-2 { width: 30%; height: 72%; }
+  .hv-3 { width: 30%; height: 100%; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { height: 280px; } }
+
+  .cat { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-lg); text-decoration: none; overflow: hidden; background: #fff; transition: border-color .15s, box-shadow .15s; }
+  .cat:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+  .cat-img { aspect-ratio: 4/3; background: #fff; position: relative; overflow: hidden; }
+  .cat-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 10%; }
+  .cat-body { padding: 16px; border-top: 1px solid var(--line); }
+  .cat-body h3 { display: flex; justify-content: space-between; align-items: baseline; }
+  .cat-n { font: 500 .75rem var(--font-mono); color: var(--muted); }
+  .cat-body p { margin: 0; color: var(--muted); font-size: .9375rem; }
+
+  .builder-teaser { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: 12px; }
+  .steps li { counter-increment: s; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 18px 20px 18px 64px; position: relative; display: grid; gap: 2px; }
+  .steps li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 20px; top: 18px; font: 600 .875rem var(--font-mono); color: var(--accent); }
+  .steps span { color: var(--muted); font-size: .9375rem; }
+  @media (max-width: 900px) { .builder-teaser { grid-template-columns: 1fr; gap: 32px; } }
+
+  .carbon-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+  .carbon-logo { height: 64px; width: auto; margin-bottom: 24px; }
+  .carbon-facts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #3a3c41; border: 1px solid #3a3c41; border-radius: var(--radius-lg); overflow: hidden; }
+  .carbon-facts li { background: var(--charcoal); padding: 22px; display: grid; gap: 4px; }
+  .carbon-facts strong { font-size: 2rem; font-stretch: 112%; line-height: 1; }
+  .carbon-facts span { color: #a9acb3; font-size: .875rem; }
+  @media (max-width: 900px) { .carbon-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .buy { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .buy h2 { margin-bottom: .4em; }
+  .buy .lede { margin: 0; }
+  .buy-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>

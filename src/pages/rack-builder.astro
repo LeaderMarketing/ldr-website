@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import RackBuilder from '../components/builder/RackBuilder.tsx';
+---
+<Base title="Rack Builder" description="Describe your equipment and the LDR Rack Builder matches a standard cabinet, checks depth and growth space, and lists the shelves, power and blanking panels that fit.">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Rack Builder</nav>
+    <header class="page-intro">
+      <h1>Rack Builder</h1>
+      <p class="lede">Tell us where the rack is going and what you're putting in it. We'll match a standard LDR cabinet and list the parts that fit it.</p>
+    </header>
+    <RackBuilder client:load />
+  </div>
+</Base>
+
+<style>
+  .page-intro { padding: 12px 0 28px; }
+  .page-intro h1 { margin-bottom: .3em; }
+  .wrap { padding-bottom: 80px; }
+</style>

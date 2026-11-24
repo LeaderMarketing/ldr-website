@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductImage from '../../components/ProductImage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import {
+  products, bySku, racks, compatibleAccessories, compatibleRacks, usableDepth, formatRRP, productUrl,
+  TYPE_LABEL, GROUP_LABEL, RANGE_LABEL, type Product, type Accessory, type AccGroup,
+} from '../../lib/catalog';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+const { product: p } = Astro.props as { product: Product };
+const price = formatRRP(p);
+const equivalent = p.equivalent ? bySku.get(p.equivalent) : null;
+const isRack = p.kind === 'rack';
+const category = isRack ? TYPE_LABEL[p.type] : GROUP_LABEL[p.group];
+const categoryHref = isRack ? `/products?kind=rack&type=${p.type}` : `/products?kind=accessory&type=${p.group}`;
+
+// Spec rows: Leader's datasheet rows when we have them, otherwise what the SKU tells us.
+let specRows: [string, string][] = p.specs;
+if (isRack && !specRows.length) {
+  const ud = usableDepth(p);
+  specRows = [
+    ['Rack units', `${p.ru}U`],
+    ['Mounting standard', p.standard === '10' ? '10 inch' : '19 inch'],
+    ...(p.width ? [['External width', `${p.width} mm`] as [string, string]] : []),
+    ...(p.depth ? [['External depth', `${p.depth} mm`] as [string, string]] : []),
+    ...(p.door ? [['Front door', p.door === 'glass' ? 'Glass' : 'Mesh']] as [string, string][] : []),
+    ['Usable mounting depth', ud.mm && !ud.estimated ? `${ud.mm} mm` : 'To be confirmed'],
+    ['Load rating', p.loadKg ? `${p.loadKg} kg` : 'To be confirmed'],
+    ['Finish', p.colour],
+  ];
+}
+if (!isRack && !specRows.length) {
+  specRows = [
+    ...(p.ru ? [['Rack units', `${p.ru}U`] as [string, string]] : []),
+    ['Mounting standard', p.fit.standard === '10' ? '10 inch' : '19 inch'],
+    ...(p.shelfDepth ? [['Shelf depth', `${p.shelfDepth} mm`] as [string, string]] : []),
+  ];
+}
+if (p.warrantyMonths) specRows = [...specRows, ['Warranty', `${p.warrantyMonths} months`]];
+
+// Related
+let groupedAcc: [AccGroup, Accessory[]][] = [];
+if (isRack) {
+  const acc = compatibleAccessories(p);
+  const groups = new Map<AccGroup, Accessory[]>();
+  for (const a of acc) groups.set(a.group, [...(groups.get(a.group) ?? []), a]);
+  groupedAcc = [...groups.entries()];
+}
+const fitsRacks = !isRack ? compatibleRacks(p) : [];
+const siblings = isRack
+  ? racks.filter((r) => r.sku !== p.sku && r.range === p.range && r.type === p.type).slice(0, 8)
+  : [];
+const gallery = [p.image, ...p.gallery].filter(Boolean) as string[];
+---
+<Base title={`${p.name} (${p.sku})`} description={p.summary || `${p.name}, ${p.sku}. ${category} from LDR.`} kind={p.kind}>
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span>
+      <a href={isRack ? '/products?kind=rack' : '/products?kind=accessory'}>{isRack ? 'Racks' : 'Accessories'}</a><span aria-hidden="true">/</span>
+      <a href={categoryHref}>{category}</a><span aria-hidden="true">/</span>{p.sku}
+    </nav>
+
+    <section class="pd">
+      <div class="pd-media">
+        <ProductImage product={p} size="hero" eager />
+        {gallery.length > 1 && (
+          <div class="thumbs" aria-label="More images">
+            {gallery.map((g, i) => <button type="button" class="thumb" data-src={g} aria-label={`Image ${i + 1}`}><img src={g} alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>)}
+          </div>
+        )}
+      </div>
+
+      <div class="pd-info">
+        <div class="badges">
+          {p.range === 'carbon' ? <span class="badge badge--carbon">Carbon</span> : <span class="badge">LDR</span>}
+          {p.isNew && <span class="badge badge--new">New</span>}
+          <span class="badge">{category}</span>
+        </div>
+        <h1>{p.name}</h1>
+        <p class="sku pd-sku">{p.sku} <button type="button" class="copy" data-copy={p.sku}>Copy</button></p>
+        {p.summary && <p class="pd-summary">{p.summary}</p>}
+
+        {isRack && (
+          <dl class="facts">
+            <div><dt>Height</dt><dd>{p.ru}U</dd></div>
+            <div><dt>W × D</dt><dd>{p.width && p.depth ? `${p.width} × ${p.depth} mm` : p.type === 'mini' ? '10"' : '—'}</dd></div>
+            <div><dt>Usable depth</dt><dd>{p.mountDepth ? `${p.mountDepth} mm` : 'TBC'}</dd></div>
+            <div><dt>Load</dt><dd>{p.loadKg ? `${p.loadKg} kg` : 'TBC'}</dd></div>
+          </dl>
+        )}
+
+        <div class="buybox">
+          <p class="price">{price ? <><strong>{price}</strong> <span class="muted">RRP inc GST</span></> : <span>Price on request</span>}</p>
+          {p.range === 'carbon' && <p class="notice">Carbon is a new range. Pricing, stock and full datasheets are being finalised: request a quote and your reseller will confirm availability.</p>}
+          <div class="actions">
+            <a class="btn btn--primary" href={`/quote?items=${encodeURIComponent(`${p.sku}:1`)}`}>Request a quote</a>
+            {isRack && <a class="btn btn--secondary" href={`/rack-builder?rack=${p.sku}`}>Plan the fit-out</a>}
+            <a class="btn btn--secondary" href="/where-to-buy">Where to buy</a>
+          </div>
+          <p class="trade muted">Trade customer? <a href="https://partner.leadersystems.com.au" rel="noopener">Check pricing & stock in the Leader portal ↗</a></p>
+        </div>
+
+        {equivalent && (
+          <a class="equiv" href={productUrl(equivalent)}>
+            <span class="muted">Also in the {RANGE_LABEL[equivalent.range]} range</span>
+            <strong>{equivalent.name}</strong> <span class="sku">{equivalent.sku}</span>
+          </a>
+        )}
+      </div>
+    </section>
+
+    <section class="pd-detail">
+      <div>
+        <h2>Specifications</h2>
+        <table class="spec-table">
+          <tbody>{specRows.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody>
+        </table>
+        {p.shipping.length > 0 && (
+          <details class="shipping"><summary>Shipping details</summary>
+            <table class="spec-table"><tbody>{p.shipping.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
+          </details>
+        )}
+      </div>
+      <div>
+        {isRack && p.inBox.length > 0 && (<><h2>In the box</h2><ul class="ticks">{p.inBox.map((i) => <li>{i}</li>)}</ul></>)}
+        {p.features.length > 0 && (<><h2>Features</h2><ul class="ticks">{p.features.map((f) => <li>{f}</li>)}</ul></>)}
+        <h2>Downloads</h2>
+        {p.datasheet
+          ? <a class="download" href={p.datasheet} rel="noopener">Datasheet (PDF) ↗</a>
+          : <p class="muted">Datasheet coming soon.</p>}
+      </div>
+    </section>
+
+    {isRack && groupedAcc.length > 0 && (
+      <section class="related">
+        <div class="section-head"><h2>Fits this cabinet</h2><a class="link-arrow" href={`/rack-builder?rack=${p.sku}`}>Plan a full fit-out →</a></div>
+        <p class="muted fit-note">Matched on mounting standard, cabinet type and depth. Shelf depths follow Leader's recommendations; check equipment depth before ordering.</p>
+        {groupedAcc.map(([g, list]) => (
+          <div class="acc-group">
+            <h3>{GROUP_LABEL[g]}</h3>
+            <div class="grid grid--4">{list.slice(0, 8).map((a) => <ProductCard product={a} />)}</div>
+          </div>
+        ))}
+      </section>
+    )}
+
+    {!isRack && fitsRacks.length > 0 && (
+      <section class="related">
+        <h2>Fits these cabinets</h2>
+        <div class="fits-list">
+          {fitsRacks.map((r) => <a href={productUrl(r)} class="fit-pill"><strong>{r.name}</strong><span class="sku">{r.sku}</span></a>)}
+        </div>
+      </section>
+    )}
+
+    {siblings.length > 0 && (
+      <section class="related">
+        <h2>Other sizes</h2>
+        <div class="grid grid--4">{siblings.map((s) => <ProductCard product={s} />)}</div>
+      </section>
+    )}
+  </div>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy').forEach((b) => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy!); b.textContent = 'Copied'; setTimeout(() => (b.textContent = 'Copy'), 1500); } catch {}
+  }));
+  const hero = document.querySelector<HTMLImageElement>('.pd-media .pimg img');
+  document.querySelectorAll<HTMLButtonElement>('.thumb').forEach((t) => t.addEventListener('click', () => {
+    if (hero) hero.src = t.dataset.src!;
+    document.querySelectorAll('.thumb').forEach((x) => x.removeAttribute('aria-current'));
+    t.setAttribute('aria-current', 'true');
+  }));
+</script>
+
+<style>
+  .pd { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; padding: 20px 0 48px; }
+  .thumbs { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .thumb { width: 72px; height: 72px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 4px; cursor: pointer; }
+  .thumb[aria-current] { border-color: var(--ink); }
+  .thumb img { width: 100%; height: 100%; object-fit: contain; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+  .pd-info h1 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); margin-bottom: .25em; }
+  .pd-sku { display: flex; align-items: center; gap: 10px; font-size: .875rem; }
+  .copy { border: 1px solid var(--line); background: #fff; border-radius: 4px; font-size: .75rem; padding: 2px 8px; cursor: pointer; }
+  .pd-summary { color: var(--ink-2); margin-top: 16px; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--radius-lg); margin: 20px 0; }
+  .facts div { padding: 12px 14px; border-right: 1px solid var(--line); }
+  .facts div:last-child { border-right: 0; }
+  .facts dt { font: 500 .6875rem var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .facts dd { margin: 4px 0 0; font-weight: 600; }
+  .buybox { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; display: grid; gap: 14px; }
+  .price { margin: 0; font-size: 1.125rem; }
+  .price strong { font-size: 1.6rem; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .trade { font-size: .875rem; margin: 0; }
+  .equiv { display: grid; gap: 2px; margin-top: 20px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-lg); text-decoration: none; }
+  .equiv:hover { border-color: var(--ink); }
+  .equiv .muted { font-size: .8125rem; }
+  .pd-detail { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); }
+  .pd-detail h2 { font-size: 1.25rem; margin-top: 0; }
+  .pd-detail h2:not(:first-child) { margin-top: 28px; }
+  .ticks { padding-left: 1.1em; margin: 0; display: grid; gap: 6px; }
+  .shipping { margin-top: 16px; }
+  .shipping summary { cursor: pointer; font-weight: 600; font-size: .9375rem; padding: 8px 0; }
+  .download { display: inline-flex; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); text-decoration: none; font-weight: 600; }
+  .related { padding: 40px 0; border-top: 1px solid var(--line); }
+  .related h2 { font-size: 1.5rem; }
+  .fit-note { margin-top: -12px; font-size: .875rem; }
+  .acc-group { margin-top: 24px; }
+  .acc-group h3 { font-size: 1rem; margin-bottom: 12px; }
+  .fits-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 8px; }
+  .fit-pill { display: grid; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; }
+  .fit-pill:hover { border-color: var(--ink); }
+  .fit-pill strong { font-size: .9375rem; }
+  @media (max-width: 860px) {
+    .pd, .pd-detail { grid-template-columns: 1fr; gap: 28px; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .facts div:nth-child(2) { border-right: 0; }
+    .facts div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+</style>

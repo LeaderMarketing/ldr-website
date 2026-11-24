@@ -1,0 +1,26 @@
+{
+  "name": "ldr-website",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/build-catalog.mjs && astro build",
+    "preview": "astro preview",
+    "catalog": "node scripts/build-catalog.mjs",
+    "sync": "powershell -ExecutionPolicy Bypass -File scripts/sync-leader.ps1",
+    "check": "astro check"
+  },
+  "description": "LDR racks catalogue and rack builder",
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "astro": "^5.18.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  },
+  "private": true,
+  "type": "module"
+}

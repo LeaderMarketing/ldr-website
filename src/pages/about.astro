@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { products } from '../lib/catalog';
+---
+<Base title="About LDR" description="LDR is a range of data racks, cabinets and accessories distributed in Australia by Leader Systems.">
+  <div class="wrap about">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>About</nav>
+    <header class="page-intro">
+      <h1>About LDR</h1>
+      <p class="lede">LDR is a range of data racks, cabinets and rack accessories distributed in Australia by Leader Systems.</p>
+    </header>
+    <div class="cols">
+      <div>
+        <h2>What we make</h2>
+        <p>{products.length} products across wall cabinets, floor cabinets, 10" mini racks, open frames and the parts to fit them out: shelves, PDUs, patch panels, blanking, cooling and cable management.</p>
+        <p>The new Carbon range extends LDR with more sizes and a dedicated fit-out range, alongside the existing LDR cabinets.</p>
+      </div>
+      <div>
+        <h2>How it's sold</h2>
+        <p>LDR is sold through resellers, installers and integrators. They order through Leader Systems and collect from, or have freight sent from, the nearest Leader warehouse.</p>
+        <p><a class="link-arrow" href="/where-to-buy">Where to buy →</a></p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .about { padding-bottom: 80px; }
+  .page-intro { padding: 12px 0 28px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px; border-top: 1px solid var(--line); padding-top: 32px; }
+  .cols h2 { font-size: 1.3rem; }
+  .cols p { color: var(--ink-2); max-width: 60ch; }
+</style>

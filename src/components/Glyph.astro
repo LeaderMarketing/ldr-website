@@ -1,0 +1,58 @@
+---
+// Neutral line drawing used where no product photo exists yet (Carbon range).
+import type { Product } from '../lib/catalog';
+interface Props { product: Product }
+const { product: p } = Astro.props;
+const kind = p.kind === 'rack' ? p.type : p.group;
+const ru = p.kind === 'rack' ? p.ru : (p.ru ?? 1);
+const tall = p.kind === 'rack' && (p.type === 'floor' || p.type === 'soundproof' || (p.type === 'open-frame' && p.ru > 12));
+const h = tall ? 150 : p.kind === 'rack' ? Math.min(40 + p.ru * 4.5, 110) : Math.max(12, ru * 12);
+const w = tall ? 70 : p.kind === 'rack' && p.type === 'mini' ? 70 : 120;
+const x = (200 - w) / 2, y = (170 - h) / 2;
+const slots = p.kind === 'rack' ? Math.min(p.ru, 24) : 0;
+const slotY = (i: number) => y + 8 + (i + 0.5) * (h - 16) / slots;
+---
+<svg viewBox="0 0 200 170" class="glyph" role="img" aria-label={`${p.name} illustration`}>
+  {p.kind === 'rack' && kind !== 'bracket' && (
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x={x} y={y} width={w} height={h} rx="2" />
+      <rect x={x + 6} y={y + 6} width={w - 12} height={h - 12} stroke-opacity=".45" />
+      {Array.from({ length: slots }, (_, i) => <line x1={x + 10} x2={x + 14} y1={slotY(i)} y2={slotY(i)} stroke-opacity=".5" />)}
+      {Array.from({ length: slots }, (_, i) => <line x1={x + w - 14} x2={x + w - 10} y1={slotY(i)} y2={slotY(i)} stroke-opacity=".5" />)}
+      {p.door === 'mesh' && <rect x={x + 16} y={y + 10} width={w - 32} height={h - 20} stroke-dasharray="1 3" stroke-opacity=".6" />}
+      {p.door === 'glass' && <line x1={x + w * 0.35} y1={y + 10} x2={x + w * 0.55} y2={y + h * 0.45} stroke-opacity=".35" />}
+      {tall && <line x1={x + 6} x2={x + 6} y1={y + h} y2={y + h + 6} />}
+      {tall && <line x1={x + w - 6} x2={x + w - 6} y1={y + h} y2={y + h + 6} />}
+    </g>
+  )}
+  {kind === 'bracket' && (
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d={`M60 ${85 - ru * 7} h80 v${ru * 14} h-80`} />
+      <path d={`M60 ${85 - ru * 7} l-14 -10 v${ru * 14 + 20} l14 -10`} />
+    </g>
+  )}
+  {p.kind === 'accessory' && (
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      {kind === 'shelves' && <path d="M30 70 h140 M30 70 l20 30 h100 l20 -30 M30 70 v12 M170 70 v12" />}
+      {kind === 'doors' && <rect x="70" y="15" width="60" height="140" rx="2" />}
+      {kind === 'doors' && <rect x="78" y="25" width="44" height="120" stroke-opacity=".4" />}
+      {kind === 'floor' && <path d="M40 110 h120 l-20 20 h-80 z" />}
+      {kind === 'cable' && <rect x="40" y="70" width="120" height="30" rx="2" />}
+      {kind === 'cable' && Array.from({ length: 7 }, (_, i) => <circle cx={52 + i * 16} cy="85" r="4" stroke-opacity=".6" />)}
+      {kind === 'power' && <rect x="20" y="75" width="160" height="20" rx="2" />}
+      {kind === 'power' && Array.from({ length: 6 }, (_, i) => <rect x={34 + i * 23} y="80" width="12" height="10" rx="1.5" stroke-opacity=".6" />)}
+      {kind === 'patching' && <rect x="20" y="72" width="160" height="26" rx="2" />}
+      {kind === 'patching' && Array.from({ length: 12 }, (_, i) => <rect x={30 + i * 12} y="80" width="8" height="8" stroke-opacity=".6" />)}
+      {kind === 'cooling' && <rect x="40" y="45" width="120" height="80" rx="2" />}
+      {kind === 'cooling' && <circle cx="75" cy="85" r="22" />}
+      {kind === 'cooling' && <circle cx="125" cy="85" r="22" />}
+      {kind === 'hardware' && <path d="M70 65 h26 v26 h-26 z M110 70 h24 v6 h-8 v26 h-8 v-26 h-8 z" />}
+      {kind === 'blanking' && <rect x="20" y={85 - ru * 8} width="160" height={ru * 16} rx="2" />}
+      {kind === 'blanking' && <circle cx="28" cy="85" r="2.5" />}
+      {kind === 'blanking' && <circle cx="172" cy="85" r="2.5" />}
+    </g>
+  )}
+</svg>
+<style>
+  .glyph { width: 100%; height: 100%; color: #6b6f77; }
+</style>
