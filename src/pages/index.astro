@@ -1,156 +1,217 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
-import { racks, accessories, bySku, products } from '../lib/catalog';
+import HeroRack from '../components/builder/HeroRack.tsx';
+import { racks, accessories, bySku, products, usableDepth, type Rack } from '../lib/catalog';
+import { PRESETS, DEFAULT_INPUT, recommend, fitOut, arrange, encodeInput, type BuilderInput } from '../lib/builder';
+import { faceplate, dimensionArt, lineupArt } from '../lib/art';
 
 const count = (f: (p: (typeof products)[number]) => boolean) => products.filter(f).length;
 const categories = [
   { title: 'Wall cabinets', href: '/products?kind=rack&type=wall', img: 'RCLDR-SS450-9U-A',
-    text: '4U to 18U. Single-section and hinged, 450 to 600 mm deep.', n: count((p) => p.kind === 'rack' && p.type === 'wall') },
+    text: '4U to 18U, single-section and hinged.', n: count((p) => p.kind === 'rack' && p.type === 'wall') },
   { title: 'Floor cabinets', href: '/products?kind=rack&type=floor', img: 'RCLDR-FS1000-42U-A',
-    text: '18U to 47U. 600 or 800 mm wide, up to 1100 mm deep.', n: count((p) => p.kind === 'rack' && p.type === 'floor') },
+    text: '18U to 47U, up to 1100 mm deep.', n: count((p) => p.kind === 'rack' && p.type === 'floor') },
   { title: 'Compact & open frame', href: '/products?kind=rack&type=mini,vertical,open-frame,bracket', img: 'RCLDR-WB-FT',
-    text: '10" mini racks, vertical cabinets, brackets and open frames.', n: count((p) => p.kind === 'rack' && ['mini', 'vertical', 'open-frame', 'bracket'].includes(p.type)) },
-  { title: 'Accessories', href: '/products?kind=accessory', img: 'RCLDR-ACC-PDU10-6',
-    text: 'Shelves, PDUs, patch panels, blanking, cooling and fit-out.', n: accessories.length },
+    text: '10" mini racks, brackets and frames.', n: count((p) => p.kind === 'rack' && ['mini', 'vertical', 'open-frame', 'bracket'].includes(p.type)) },
+  { title: 'Accessories', href: '/products?kind=accessory', img: 'RCLDR-ACC-CSHELF275',
+    text: 'Shelves, power, patching and cooling.', n: accessories.length },
 ];
 const featured = ['RCLDR-SS450-9U-A', 'RCLDR-DS550-6U-A', 'RCLDR-FS800-18U-A', 'RCLDR-FS1000-42U-A']
   .map((s) => bySku.get(s)!).filter(Boolean);
-const carbonRacks = racks.filter((r) => r.range === 'carbon').length;
-const carbonAcc = accessories.filter((a) => a.range === 'carbon').length;
-const carbonOf = (t: string) => racks.filter((r) => r.range === 'carbon' && r.type === t).length;
 const img = (sku: string) => bySku.get(sku)?.image;
+
+// A worked example for the "how it works" cards: the same sums the Rack Builder does.
+const demoPreset = PRESETS.find((p) => p.id === 'office')!;
+const demoInput: BuilderInput = { ...DEFAULT_INPUT, placement: demoPreset.placement, devices: { ...demoPreset.devices } };
+const demo = recommend(demoInput);
+const demoRack = demo.rack!;
+const demoLines = fitOut(demoRack, demoInput, demo.need);
+const demoOn = demoLines.filter((l) => !l.optional || l.defaultOn);
+const demoPlan = arrange(demoRack, demoInput, demo.need, demoLines, new Set(demoOn.map((l) => l.sku)));
+const demoStack = demoPlan.items.filter((i) => i.kind !== 'blank' && i.kind !== 'free');
+const demoDepth = usableDepth(demoRack);
+const demoHref = `/rack-builder?${encodeInput(demoInput)}`;
+
+// Carbon cabinets, drawn to one scale.
+const carbon = racks.filter((r) => r.range === 'carbon');
+const carbonAcc = accessories.filter((a) => a.range === 'carbon').length;
+const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12U-CARBON', 'RCLDR-SS450-18U-CARBON',
+  'RCLDR-FS600-22U-CARBON', 'RCLDR-FS800-27U-CARBON', 'RCLDR-FS600-32U-CARBON', 'RCLDR-FS1000-42U-CARBON', 'RCLDR-FWMAX-47U-CARBON']
+  .map((s) => bySku.get(s)).filter((p): p is Rack => p?.kind === 'rack');
 ---
 <Base title="LDR" description="LDR wall and floor data cabinets, 10-inch mini racks and rack accessories. Stocked by Leader Systems and sold through Australian resellers.">
   <section class="hero">
     <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">LDR data racks</span>
-        <h1>Racks and cabinets for every comms room.</h1>
-        <p class="lede">Wall cabinets from 4U, floor cabinets up to 47U, and the shelves, power and cable management to fit them out. Distributed by Leader Systems through Australian resellers.</p>
+      <div class="hero-copy">
+        <span class="eyebrow">LDR data racks and cabinets</span>
+        <h1>Find the rack that fits.</h1>
+        <p class="lede">Wall cabinets from 4U, floor cabinets up to 47U, and the shelves, power and cable management to fit them out. Pick a setup and watch the cabinet size itself.</p>
         <div class="hero-actions">
-          <a class="btn btn--primary" href="/products?kind=rack">Browse racks</a>
-          <a class="btn btn--secondary" href="/rack-builder">Find the right rack</a>
+          <a class="btn btn--primary" href="/rack-builder">Open the Rack Builder</a>
+          <a class="btn btn--secondary" href="/products?kind=rack">Browse racks</a>
         </div>
+        <p class="hero-note">Distributed by Leader Systems through Australian resellers.</p>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <img src={img('RCLDR-SS450-6U-A')} alt="" class="hv hv-1" />
-        <img src={img('RCLDR-FS800-18U-A')} alt="" class="hv hv-2" />
-        <img src={img('RCLDR-FS1000-42U-A')} alt="" class="hv hv-3" />
-      </div>
+      <HeroRack client:load />
     </div>
   </section>
 
-  <section class="section">
+  <section class="section types">
     <div class="wrap">
-      <div class="section-head"><h2>Shop by type</h2><a class="link-arrow" href="/products">All {products.length} products →</a></div>
-      <div class="grid grid--4">
-        {categories.map((c) => (
-          <a href={c.href} class="cat">
-            <div class="cat-img"><img src={img(c.img)} alt="" loading="lazy" onerror="this.remove()" /></div>
-            <div class="cat-body">
-              <h3>{c.title} <span class="cat-n">{c.n}</span></h3>
-              <p>{c.text}</p>
-            </div>
-          </a>
+      <div class="section-head reveal"><h2>Shop by type</h2><a class="link-arrow" href="/products">All {products.length} products →</a></div>
+      <div class="type-grid">
+        {categories.map((c, i) => (
+          <div class="reveal" style={`--d: ${i * 0.07}s`}>
+            <a href={c.href} class="type-tile">
+              <div class="type-text">
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+                <span class="type-n">{c.n} products</span>
+              </div>
+              <div class="type-img"><img src={img(c.img)} alt="" loading="lazy" onerror="this.remove()" /></div>
+            </a>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section section--tint">
-    <div class="wrap builder-teaser">
-      <div>
+  <section class="section section--tint how">
+    <div class="wrap">
+      <div class="how-head reveal">
         <span class="eyebrow">Rack Builder</span>
-        <h2>Tell us what's going in the rack. We'll match the cabinet.</h2>
-        <p class="lede">Pick where it's going and the equipment you're housing. The builder sizes the cabinet with room to grow, checks the depth, and adds the shelves, power and blanking panels that fit. You get a parts list to send to your reseller.</p>
-        <a class="btn btn--primary" href="/rack-builder">Start the Rack Builder</a>
+        <h2>Sized by what goes in it.</h2>
+        <p class="lede">Add your switches, patch panels, recorders and servers. The builder does the sums an installer would, then matches a standard LDR cabinet. Here is a small office, worked through.</p>
       </div>
-      <ol class="steps">
-        <li><strong>Where it's going</strong><span>Wall, floor or a compact 10" space</span></li>
-        <li><strong>What's going in</strong><span>Switches, patch panels, NVRs, servers, UPS</span></li>
-        <li><strong>Your matched rack</strong><span>Recommended SKU, alternatives and a fit-out list</span></li>
-      </ol>
+      <div class="how-grid">
+        <article class="how-card reveal">
+          <div class="how-visual how-stack" aria-hidden="true">
+            {demoStack.map((it) => (
+              <div class="how-row"><div class="how-face" style={`aspect-ratio: 482.6 / ${it.ru * 44.45}`} set:html={faceplate(it.face!, it.ru, '19', it.boxes)} /><span>{it.ru}U</span></div>
+            ))}
+          </div>
+          <h3>Counts the rack units</h3>
+          <p>{demo.need.usedU}U of equipment, shelves and power, plus {Math.round(demoInput.growth * 100)}% to grow, calls for {demo.need.requiredU}U. The match is a {demoRack.ru}U cabinet.</p>
+        </article>
+        <article class="how-card reveal" style="--d: .08s">
+          <div class="how-visual how-dims" set:html={dimensionArt(demoRack)} />
+          <h3>Checks the depth</h3>
+          <p>The deepest item here is about {demo.need.deepest} mm. {demoDepth.mm ? `This cabinet has ${demoDepth.estimated ? 'roughly ' : ''}${demoDepth.mm} mm of usable mounting depth.` : 'Usable depth is confirmed against the datasheet.'}</p>
+        </article>
+        <article class="how-card reveal" style="--d: .16s">
+          <div class="how-visual how-parts" aria-hidden="true">
+            <ul>
+              {demoOn.slice(0, 5).map((l) => <li><span>{bySku.get(l.sku)!.name}</span><b>× {l.qty}</b></li>)}
+              {demoOn.length > 5 && <li class="more"><span>+ {demoOn.length - 5} more</span></li>}
+            </ul>
+          </div>
+          <h3>Lists the fit-out</h3>
+          <p>Shelves, power, blanking panels and hardware that fit the matched cabinet: {demoOn.length} lines with SKUs and quantities, ready to send to your reseller.</p>
+        </article>
+      </div>
+      <div class="how-cta reveal">
+        <a class="btn btn--primary" href={demoHref}>Open this build</a>
+        <a class="link-arrow" href="/rack-builder">Start from scratch →</a>
+      </div>
     </div>
   </section>
 
   <section class="section section--dark carbon-band">
-    <div class="wrap carbon-grid">
-      <div>
+    <div class="wrap">
+      <div class="carbon-head reveal">
         <img src="/brand/ldr-carbon-light.png" alt="LDR Carbon" class="carbon-logo" width="233" height="84" />
-        <p class="lede">The new Carbon range: {carbonRacks} cabinets from 2U brackets to a 47U floor rack, with {carbonAcc} matching fit-out parts including spare doors, plinths and vertical cable managers.</p>
+        <p class="lede">The new Carbon range: {carbon.length} cabinets from 2U brackets to a 47U floor rack, with {carbonAcc} matching fit-out parts including spare doors, plinths and vertical cable managers.</p>
         <a class="btn btn--secondary" href="/carbon">Explore Carbon</a>
       </div>
-      <ul class="carbon-facts">
-        <li><strong>{carbonOf('wall')}</strong><span>wall cabinets, 4U–18U</span></li>
-        <li><strong>{carbonOf('floor')}</strong><span>floor cabinets, 18U–47U</span></li>
-        <li><strong>{carbonOf('mini')}</strong><span>10" mini racks</span></li>
-        <li><strong>{carbonAcc}</strong><span>fit-out parts</span></li>
-      </ul>
+      <figure class="lineup reveal">
+        <div class="lineup-scroll"><div class="lineup-art" set:html={lineupArt(lineup, { labels: true })} /></div>
+        <figcaption>Illustrations, drawn to one scale by rack units. Select a cabinet for its details.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head"><h2>Popular cabinets</h2><a class="link-arrow" href="/products?kind=rack">All racks →</a></div>
-      <div class="grid grid--4">{featured.map((p) => <ProductCard product={p} />)}</div>
+      <div class="section-head reveal"><h2>Popular cabinets</h2><a class="link-arrow" href="/products?kind=rack">All racks →</a></div>
+      <div class="grid grid--4">{featured.map((p, i) => <div class="reveal" style={`--d: ${i * 0.06}s`}><ProductCard product={p} /></div>)}</div>
     </div>
   </section>
 
-  <section class="section section--tint">
-    <div class="wrap buy">
-      <div>
-        <h2>Buying LDR</h2>
-        <p class="lede">LDR is sold through resellers and integrators, supplied from Leader Systems warehouses in Adelaide, Brisbane, Melbourne, Perth and Sydney. Already have a Leader account? Order directly through the trade portal.</p>
-      </div>
-      <div class="buy-actions">
-        <a class="btn btn--primary" href="/where-to-buy">Where to buy</a>
-        <a class="btn btn--secondary" href="/quote">Request a quote</a>
+  <section class="buy-wrap">
+    <div class="wrap">
+      <div class="buy reveal">
+        <div>
+          <h2>Buying LDR</h2>
+          <p class="lede">LDR is sold through resellers and integrators, supplied from Leader Systems warehouses in Adelaide, Brisbane, Melbourne, Perth and Sydney. Already have a Leader account? Order directly through the trade portal.</p>
+        </div>
+        <div class="buy-actions">
+          <a class="btn btn--primary" href="/where-to-buy">Where to buy</a>
+          <a class="btn btn--secondary" href="/quote">Request a quote</a>
+        </div>
       </div>
     </div>
   </section>
 </Base>
 
 <style>
-  .hero { background: var(--charcoal); color: #fff; overflow: hidden; }
-  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 7vw, 96px); }
-  .hero .eyebrow { color: #9a9da4; }
-  .hero .lede { color: #b9bcc2; }
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-  .hero-visual { position: relative; height: 420px; background: #fff; border-radius: var(--radius-lg); display: flex; align-items: flex-end; justify-content: center; gap: 2%; padding: 32px 28px 28px; overflow: hidden; }
-  .hero-visual::after { content: ''; position: absolute; left: 6%; right: 6%; bottom: 26px; height: 1px; background: var(--line); }
-  .hv { position: relative; z-index: 1; object-fit: contain; object-position: bottom; mix-blend-mode: multiply; }
-  .hv-1 { width: 36%; height: 50%; }
-  .hv-2 { width: 30%; height: 72%; }
-  .hv-3 { width: 30%; height: 100%; }
-  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { height: 280px; } }
+  .hero { padding: clamp(28px, 4vw, 56px) 0 clamp(40px, 5vw, 72px); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.75rem); letter-spacing: -.045em; line-height: 1; margin-bottom: .35em; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .hero-note { margin: 22px 0 0; font-size: .8125rem; color: var(--muted); }
+  @media (max-width: 960px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } .hero-copy { text-align: center; } .hero .lede { margin-inline: auto; } .hero-actions { justify-content: center; } }
 
-  .cat { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-lg); text-decoration: none; overflow: hidden; background: #fff; transition: border-color .15s, box-shadow .15s; }
-  .cat:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
-  .cat-img { aspect-ratio: 4/3; background: #fff; position: relative; overflow: hidden; }
-  .cat-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 10%; }
-  .cat-body { padding: 16px; border-top: 1px solid var(--line); }
-  .cat-body h3 { display: flex; justify-content: space-between; align-items: baseline; }
-  .cat-n { font: 500 .75rem var(--font-mono); color: var(--muted); }
-  .cat-body p { margin: 0; color: var(--muted); font-size: .9375rem; }
+  .types { padding-top: clamp(24px, 4vw, 48px); }
+  .type-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .type-tile { display: flex; flex-direction: column; height: 100%; min-height: 400px; border-radius: var(--radius-xl); background: var(--paper-2); text-decoration: none; overflow: hidden; transition: background .3s, box-shadow .5s var(--ease); }
+  .type-tile:hover { background: #fff; box-shadow: var(--shadow); }
+  .type-text { padding: 26px 26px 0; }
+  .type-text h3 { font-size: 1.375rem; letter-spacing: -.025em; margin: 0 0 6px; }
+  .type-text p { margin: 0; color: var(--muted); font-size: .9375rem; }
+  .type-n { display: inline-block; margin-top: 12px; font-size: .8125rem; font-weight: 500; color: var(--accent); }
+  .type-img { position: relative; flex: 1; min-height: 200px; margin-top: 8px; }
+  .type-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 60%; padding: 6% 12% 10%; mix-blend-mode: multiply; transition: transform .7s var(--ease); }
+  .type-tile:hover .type-img img { transform: scale(1.05); }
+  @media (max-width: 1040px) { .type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .type-tile { min-height: 340px; } }
+  @media (max-width: 520px) { .type-grid { grid-template-columns: minmax(0, 1fr); } .type-tile { flex-direction: row; min-height: 0; align-items: center; } .type-text { padding: 22px 0 22px 22px; flex: 1.2; } .type-img { min-height: 150px; margin: 0; } }
 
-  .builder-teaser { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
-  .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: 12px; }
-  .steps li { counter-increment: s; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 18px 20px 18px 64px; position: relative; display: grid; gap: 2px; }
-  .steps li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 20px; top: 18px; font: 600 .875rem var(--font-mono); color: var(--accent); }
-  .steps span { color: var(--muted); font-size: .9375rem; }
-  @media (max-width: 900px) { .builder-teaser { grid-template-columns: 1fr; gap: 32px; } }
+  .how-head { max-width: 760px; margin-bottom: clamp(28px, 4vw, 48px); }
+  .how-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .how-card { background: var(--paper); border-radius: var(--radius-xl); padding: 14px 14px 26px; display: flex; flex-direction: column; }
+  .how-card h3 { margin: 22px 14px 6px; font-size: 1.25rem; letter-spacing: -.022em; }
+  .how-card p { margin: 0 14px; color: var(--muted); font-size: .9375rem; }
+  .how-visual { height: 260px; border-radius: 18px; background: var(--paper-2); display: grid; place-items: center; padding: 22px; overflow: hidden; }
+  .how-stack { background: #141518; align-content: center; gap: 2px; padding: 22px 26px; }
+  .how-row { display: grid; grid-template-columns: minmax(0, 1fr) 26px; gap: 10px; align-items: center; width: 100%; max-width: 380px; }
+  .how-face :global(svg) { display: block; width: 100%; height: 100%; }
+  .how-row span { font: 500 .6875rem/1 var(--font-mono); color: #8e8e93; }
+  .how-dims :global(svg) { width: 100%; height: 100%; }
+  .how-parts { place-items: stretch; align-content: center; padding: 18px 22px; }
+  .how-parts ul { list-style: none; margin: 0; padding: 0; display: grid; }
+  .how-parts li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .8125rem; }
+  .how-parts li:last-child { border-bottom: 0; }
+  .how-parts li span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+  .how-parts li b { font-weight: 400; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .how-parts li.more span { color: var(--muted); font-weight: 400; }
+  .how-cta { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 32px; }
+  @media (max-width: 900px) { .how-grid { grid-template-columns: minmax(0, 1fr); } .how-visual { height: 230px; } }
 
-  .carbon-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
-  .carbon-logo { height: 64px; width: auto; margin-bottom: 24px; }
-  .carbon-facts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #3a3c41; border: 1px solid #3a3c41; border-radius: var(--radius-lg); overflow: hidden; }
-  .carbon-facts li { background: var(--charcoal); padding: 22px; display: grid; gap: 4px; }
-  .carbon-facts strong { font-size: 2rem; font-stretch: 112%; line-height: 1; }
-  .carbon-facts span { color: #a9acb3; font-size: .875rem; }
-  @media (max-width: 900px) { .carbon-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .carbon-head { display: grid; justify-items: center; text-align: center; gap: 4px; }
+  .carbon-logo { height: clamp(56px, 7vw, 84px); width: auto; margin-bottom: 18px; }
+  .carbon-head .lede { margin-bottom: 26px; }
+  .lineup { margin: clamp(36px, 5vw, 64px) 0 0; }
+  .lineup-scroll { overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
+  .lineup-scroll::-webkit-scrollbar { display: none; }
+  .lineup-art { min-width: 760px; }
+  .lineup-art :global(svg) { width: 100%; height: auto; overflow: visible; }
+  .lineup-art :global(.lu-item) { transition: filter .3s; cursor: pointer; }
+  .lineup-art :global(.lu-item:hover) { filter: brightness(1.5); }
+  .lineup figcaption { margin-top: 22px; text-align: center; font-size: .75rem; color: #86868b; }
 
-  .buy { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .buy-wrap { padding-bottom: clamp(56px, 8vw, 112px); }
+  .buy { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; background: var(--paper-2); border-radius: var(--radius-xl); padding: clamp(28px, 4.5vw, 56px); }
   .buy h2 { margin-bottom: .4em; }
-  .buy .lede { margin: 0; }
+  .buy .lede { margin: 0; font-size: 1.0625rem; }
   .buy-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 </style>

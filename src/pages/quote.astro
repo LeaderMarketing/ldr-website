@@ -118,11 +118,12 @@ const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rr
 
 <style>
   .q { padding-bottom: 80px; }
-  .page-intro { padding: 12px 0 28px; }
+  .page-intro { padding: 18px 0 32px; }
+  .page-intro h1 { font-size: clamp(2rem, 4.4vw, 3.25rem); }
   .q-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
   @media (max-width: 860px) { .q-grid { grid-template-columns: 1fr; } }
-  .q-grid h2 { font-size: 1.25rem; font-stretch: 100%; }
-  .q-items { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; }
+  .q-grid h2 { font-size: 1.25rem; }
+  .q-items { background: var(--paper-2); border-radius: var(--radius-xl); padding: 26px; }
   #q-list { list-style: none; padding: 0; margin: 0 0 16px; border-top: 1px solid var(--line); }
   #q-list:empty { border: 0; }
   :global(#q-list li) { display: grid; grid-template-columns: 1fr 76px 36px; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }

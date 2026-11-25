@@ -47,15 +47,17 @@ import { site } from '../data/site';
 
 <style>
   .wtb { padding-bottom: 80px; }
-  .page-intro { padding: 12px 0 28px; }
+  .page-intro { padding: 18px 0 32px; }
+  .page-intro h1 { font-size: clamp(2rem, 4.4vw, 3.25rem); }
   .paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
-  .path { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; display: grid; gap: 4px; align-content: start; }
-  .path h2 { font-size: 1.2rem; font-stretch: 100%; }
+  .path { background: var(--paper-2); border-radius: var(--radius-xl); padding: 28px; display: grid; gap: 4px; align-content: start; }
+  .path h2 { font-size: 1.25rem; }
   .path p { color: var(--ink-2); }
   .path .btn { justify-self: start; }
   .branches { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
   .branches ul { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 12px; }
-  .branches li { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px; display: grid; gap: 6px; align-content: start; }
+  .branches li { background: var(--paper-2); border-radius: var(--radius-lg); padding: 18px; display: grid; gap: 6px; align-content: start; }
+  .branches li .badge { background: #fff; }
   .branches li .badge { justify-self: start; }
   .branches li span:not(.badge) { color: var(--muted); font-size: .9375rem; }
 </style>

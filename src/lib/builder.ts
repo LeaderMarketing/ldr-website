@@ -1,6 +1,7 @@
 // Rack Builder logic: turns a description of the customer's equipment into a
 // recommended LDR cabinet (an existing SKU) plus the accessories that fit it.
 import { racks, accessories, bySku, fits, usableDepth, type Rack, type Accessory, type RackType, type Range } from './catalog';
+import type { FaceKind } from './art';
 
 export type Placement = 'wall' | 'floor' | 'compact' | 'open';
 export type RangePref = 'any' | Range;
@@ -8,6 +9,7 @@ export type DoorPref = 'any' | 'glass' | 'mesh';
 
 export interface DeviceType {
   id: string; label: string; hint: string;
+  group: 'network' | 'shelf' | 'av' | 'server';
   ru: number;            // rack units occupied (shelf devices: see SHELF_ZONE_U)
   depth: number;         // typical depth in mm, used for depth checks
   mount: 'rack' | 'shelf';
@@ -17,19 +19,25 @@ export interface DeviceType {
 }
 
 export const DEVICES: DeviceType[] = [
-  { id: 'patch',   label: 'Patch panel, 24-port',      hint: '1U', ru: 1, depth: 120, mount: 'rack',  outlets: 0, zone: 'top', supplySku: 'RCLDR-ACC-PP-24-6' },
-  { id: 'cable',   label: 'Cable management rail',     hint: '1U', ru: 1, depth: 80,  mount: 'rack',  outlets: 0, zone: 'top', supplySku: 'RCLDR-ACC-CABLEMT' },
-  { id: 'switch',  label: 'Network switch',            hint: '1U, ~250 mm deep', ru: 1, depth: 250, mount: 'rack', outlets: 1, zone: 'top' },
-  { id: 'poe',     label: 'PoE switch',                hint: '1U, ~350 mm deep', ru: 1, depth: 350, mount: 'rack', outlets: 1, zone: 'top' },
-  { id: 'router',  label: 'Router / firewall',         hint: '1U, ~300 mm deep', ru: 1, depth: 300, mount: 'rack', outlets: 1, zone: 'top' },
-  { id: 'desktop', label: 'Desktop box on a shelf',    hint: 'NBN/modem, small NVR, NAS', ru: 0, depth: 250, mount: 'shelf', outlets: 1, zone: 'middle' },
-  { id: 'nvr',     label: 'Rack-mount NVR / recorder', hint: '2U, ~400 mm deep', ru: 2, depth: 400, mount: 'rack', outlets: 1, zone: 'middle' },
-  { id: 'av',      label: 'AV amplifier / processor',  hint: '2U, ~400 mm deep', ru: 2, depth: 400, mount: 'rack', outlets: 1, zone: 'middle' },
-  { id: 'server1', label: 'Rack server, 1U',           hint: '~700 mm deep', ru: 1, depth: 700, mount: 'rack', outlets: 2, zone: 'middle' },
-  { id: 'server2', label: 'Rack server, 2U',           hint: '~700 mm deep', ru: 2, depth: 700, mount: 'rack', outlets: 2, zone: 'middle' },
-  { id: 'ups',     label: 'Rack-mount UPS',            hint: '2U, ~500 mm deep', ru: 2, depth: 500, mount: 'rack', outlets: 0, zone: 'bottom' },
+  { id: 'patch',   group: 'network', label: 'Patch panel, 24-port',      hint: '1U', ru: 1, depth: 120, mount: 'rack',  outlets: 0, zone: 'top', supplySku: 'RCLDR-ACC-PP-24-6' },
+  { id: 'cable',   group: 'network', label: 'Cable management rail',     hint: '1U', ru: 1, depth: 80,  mount: 'rack',  outlets: 0, zone: 'top', supplySku: 'RCLDR-ACC-CABLEMT' },
+  { id: 'switch',  group: 'network', label: 'Network switch',            hint: '1U, ~250 mm deep', ru: 1, depth: 250, mount: 'rack', outlets: 1, zone: 'top' },
+  { id: 'poe',     group: 'network', label: 'PoE switch',                hint: '1U, ~350 mm deep', ru: 1, depth: 350, mount: 'rack', outlets: 1, zone: 'top' },
+  { id: 'router',  group: 'network', label: 'Router / firewall',         hint: '1U, ~300 mm deep', ru: 1, depth: 300, mount: 'rack', outlets: 1, zone: 'top' },
+  { id: 'desktop', group: 'shelf',   label: 'Desktop box on a shelf',    hint: 'NBN/modem, small NVR, NAS', ru: 0, depth: 250, mount: 'shelf', outlets: 1, zone: 'middle' },
+  { id: 'nvr',     group: 'av',      label: 'Rack-mount NVR / recorder', hint: '2U, ~400 mm deep', ru: 2, depth: 400, mount: 'rack', outlets: 1, zone: 'middle' },
+  { id: 'av',      group: 'av',      label: 'AV amplifier / processor',  hint: '2U, ~400 mm deep', ru: 2, depth: 400, mount: 'rack', outlets: 1, zone: 'middle' },
+  { id: 'server1', group: 'server',  label: 'Rack server, 1U',           hint: '~700 mm deep', ru: 1, depth: 700, mount: 'rack', outlets: 2, zone: 'middle' },
+  { id: 'server2', group: 'server',  label: 'Rack server, 2U',           hint: '~700 mm deep', ru: 2, depth: 700, mount: 'rack', outlets: 2, zone: 'middle' },
+  { id: 'ups',     group: 'server',  label: 'Rack-mount UPS',            hint: '2U, ~500 mm deep', ru: 2, depth: 500, mount: 'rack', outlets: 0, zone: 'bottom' },
 ];
 export const deviceById = new Map(DEVICES.map((d) => [d.id, d]));
+export const DEVICE_GROUPS: { id: DeviceType['group']; label: string }[] = [
+  { id: 'network', label: 'Network & patching' },
+  { id: 'shelf', label: 'On a shelf' },
+  { id: 'av', label: 'Security & AV' },
+  { id: 'server', label: 'Servers & power' },
+];
 
 /** Desktop devices sit on shelves; one 2U shelf zone holds up to two small boxes. */
 export const SHELF_ZONE_U = 2;
@@ -52,11 +60,12 @@ export interface BuilderInput {
   depthOverride: number | null;
   quiet: boolean;          // floor: noise-sensitive space → soundproof cabinets
   lockedRack: string | null;
+  layout: string[] | null; // the customer's own arrangement (see "Layout"); null = arranged automatically
 }
 
 export const DEFAULT_INPUT: BuilderInput = {
   placement: 'wall', devices: { ...PRESETS[0].devices }, growth: 0.25, range: 'any', door: 'any',
-  depthOverride: null, quiet: false, lockedRack: null,
+  depthOverride: null, quiet: false, lockedRack: null, layout: null,
 };
 
 export const PLACEMENT_TYPES: Record<Placement, RackType[]> = {
@@ -93,19 +102,19 @@ export function computeNeed(input: BuilderInput, rack: Rack | null = null): Need
   return { rackU, shelfZones, shelfBoxes, outlets, pduU, usedU, requiredU, deepest, deepestFrom };
 }
 
-export interface Check { ok: boolean; label: string; detail: string; estimated?: boolean }
+export interface Check { ok: boolean; id: 'space' | 'growth' | 'depth'; label: string; detail: string; estimated?: boolean }
 
 export function checkRack(rack: Rack, input: BuilderInput): { checks: Check[]; need: Need; ok: boolean } {
   const need = computeNeed(input, rack);
   const ud = usableDepth(rack);
   const checks: Check[] = [
-    { ok: rack.ru >= need.usedU, label: 'Fits your equipment', detail: `${need.usedU}U needed, ${rack.ru}U available` },
-    { ok: rack.ru >= need.requiredU, label: 'Room to grow', detail: rack.ru >= need.requiredU ? `${rack.ru - need.usedU}U spare` : `${need.requiredU}U wanted with growth allowance` },
+    { id: 'space', ok: rack.ru >= need.usedU, label: 'Fits your equipment', detail: `${need.usedU}U needed, ${rack.ru}U available` },
+    { id: 'growth', ok: rack.ru >= need.requiredU, label: 'Room to grow', detail: rack.ru >= need.requiredU ? `${rack.ru - need.usedU}U spare` : `${need.requiredU}U wanted with growth allowance` },
   ];
   if (need.deepest > 0) {
     checks.push(ud.mm == null
-      ? { ok: true, estimated: true, label: 'Depth', detail: 'Mounting depth to be confirmed on the datasheet' }
-      : { ok: ud.mm >= need.deepest, estimated: ud.estimated, label: 'Depth',
+      ? { id: 'depth', ok: true, estimated: true, label: 'Depth', detail: 'Mounting depth to be confirmed on the datasheet' }
+      : { id: 'depth', ok: ud.mm >= need.deepest, estimated: ud.estimated, label: 'Depth',
           detail: `${need.deepest} mm deepest device, ${ud.estimated ? '~' : ''}${ud.mm} mm usable${ud.estimated ? ' (estimate)' : ''}` });
   }
   return { checks, need, ok: checks.every((c) => c.ok) };
@@ -117,7 +126,7 @@ function eligibleTypes(input: BuilderInput): RackType[] {
 }
 
 export interface Recommendation {
-  rack: Rack | null; alternatives: { rack: Rack; why: string }[];
+  rack: Rack | null; best: Rack | null; alternatives: { rack: Rack; why: string }[];
   relaxed: string[]; need: Need; checks: Check[]; reasons: string[];
 }
 
@@ -149,7 +158,8 @@ export function recommend(input: BuilderInput): Recommendation {
   }
   pool.sort(rank);
 
-  let rack = pool[0] ?? null;
+  const best = pool[0] ?? null;
+  let rack = best;
   if (input.lockedRack) rack = (bySku.get(input.lockedRack) as Rack) ?? rack;
 
   const alternatives: { rack: Rack; why: string }[] = [];
@@ -172,7 +182,32 @@ export function recommend(input: BuilderInput): Recommendation {
     const ud = usableDepth(rack);
     if (need.deepest && ud.mm) reasons.push(`Deepest item ~${need.deepest} mm (${need.deepestFrom}); ${ud.estimated ? 'estimated ' : ''}usable depth ${ud.mm} mm.`);
   }
-  return { rack, alternatives: alternatives.slice(0, 3), relaxed, need, checks: result.checks, reasons };
+  // A locked cabinet can only relax what was relaxed to find the best fit, so those notes don't apply to it.
+  return { rack, best, alternatives: alternatives.slice(0, 3), relaxed: input.lockedRack && rack !== best ? [] : relaxed, need, checks: result.checks, reasons };
+}
+
+// ---------- Size choices ----------
+export interface SizeOption { ru: number; rack: Rack; fits: boolean; count: number }
+
+/** Every cabinet of one height for this placement, best match for the preferences first. */
+export function variantsAt(input: BuilderInput, ru: number): Rack[] {
+  const types = eligibleTypes(input), deepest = computeNeed(input).deepest;
+  const score = (r: Rack) => {
+    const u = usableDepth(r).mm;
+    return (u == null || u >= deepest ? 0 : 4) + (input.range === 'any' || r.range === input.range ? 0 : 2) + (input.door === 'any' || r.door === input.door ? 0 : 1);
+  };
+  return racks.filter((r) => types.includes(r.type) && r.ru === ru).sort((a, b) =>
+    score(a) - score(b) || (a.depth ?? 0) - (b.depth ?? 0) || (usableDepth(a).estimated ? 1 : 0) - (usableDepth(b).estimated ? 1 : 0) || a.sku.localeCompare(b.sku));
+}
+
+/** One entry per cabinet height available for this placement. */
+export function sizeOptions(input: BuilderInput): SizeOption[] {
+  const types = eligibleTypes(input);
+  const sizes = [...new Set(racks.filter((r) => types.includes(r.type)).map((r) => r.ru))].sort((a, b) => a - b);
+  return sizes.map((ru) => {
+    const list = variantsAt(input, ru);
+    return { ru, rack: list[0], count: list.length, fits: checkRack(list[0], input).checks.every((c) => c.ok || c.id === 'growth') };
+  });
 }
 
 // ---------- Fit-out ----------
@@ -219,9 +254,8 @@ export function fitOut(rack: Rack, input: BuilderInput, need: Need): Line[] {
   const pdu = pduPlan(rack, need.outlets, input.placement);
   if (pdu.sku) lines.push({ sku: pdu.sku, qty: pdu.qty, role: `Power for ${need.outlets} outlet${need.outlets > 1 ? 's' : ''}`, optional: true, defaultOn: true });
 
-  // Blanking panels.
-  const used = need.usedU;
-  lines.push(...blanking(rack, rack.ru - used));
+  // Blanking panels manage airflow in enclosed cabinets; open frames and brackets don't need them.
+  if (rack.type !== 'open-frame' && rack.type !== 'bracket') lines.push(...blanking(rack, rack.ru - need.usedU));
 
   // Cage nuts: 4 per rack-mounted U of equipment.
   const cage = accessories.find((a) => a.group === 'hardware' && /CAGENUT/.test(a.sku));
@@ -244,51 +278,128 @@ export function fitOut(rack: Rack, input: BuilderInput, need: Need): Line[] {
   return lines;
 }
 
-// ---------- Elevation (front view) ----------
-export interface Slot { u: number; height: number; label: string; kind: 'device' | 'shelf' | 'pdu' | 'blank' | 'empty' }
+// ---------- Layout (what sits where in the rack) ----------
+// The rack holds two stacks: one hanging from the top and one standing on the bottom, with the
+// spare space between them. A layout is the sequence of tokens (a device id, 'shelf' or 'pdu')
+// from top to bottom, with GAP marking where the spare space goes. Equipment of one type is
+// interchangeable, so the sequence is all there is to store.
+export const GAP = '|';
+export type SlotKind = 'device' | 'shelf' | 'pdu' | 'blank' | 'free';
+export interface Placed {
+  id: string; kind: SlotKind; token: string; face: FaceKind | null; label: string;
+  ru: number;        // height in rack units
+  u: number;         // highest unit occupied; units count up from 1 at the bottom
+  depth: number;     // mm
+  seq: number;       // position in the layout sequence; -1 for blanking panels and free space
+  ldr: boolean;      // an LDR part on the parts list, rather than the customer's own equipment
+  sku?: string; boxes?: number;
+}
+export interface Arrangement { items: Placed[]; seq: string[]; unplaced: Placed[]; spare: number }
 
-export function elevation(rack: Rack, input: BuilderInput, need: Need, lines: Line[], enabled: Set<string>): Slot[] {
-  const items: Omit<Slot, 'u'>[] = [];
-  const add = (zone: 'top' | 'middle' | 'bottom') => {
-    for (const d of DEVICES.filter((x) => x.zone === zone && x.mount === 'rack')) {
-      for (let i = 0; i < (input.devices[d.id] ?? 0); i++) items.push({ height: d.ru, label: d.label.replace(/, 24-port/, ''), kind: 'device' });
-    }
-  };
-  // Top zone: interleave patch panel → cable rail → switch, the way installers stack them.
-  const take = (id: string) => Array.from({ length: input.devices[id] ?? 0 }, () => deviceById.get(id)!);
-  const lanes = [take('patch'), take('cable'), [...take('switch'), ...take('poe')]];
-  while (lanes.some((l) => l.length)) for (const l of lanes) { const d = l.shift(); if (d) items.push({ height: d.ru, label: d.label.replace(/, 24-port/, ''), kind: 'device' }); }
-  for (const d of take('router')) items.push({ height: d.ru, label: d.label, kind: 'device' });
-  for (let i = 0; i < need.shelfZones; i++) {
-    const boxes = Math.min(BOXES_PER_SHELF, need.shelfBoxes - i * BOXES_PER_SHELF);
-    items.push({ height: SHELF_ZONE_U, label: `Shelf · ${boxes} desktop box${boxes > 1 ? 'es' : ''}`, kind: 'shelf' });
-  }
-  add('middle');
-  const blanks = lines.filter((l) => l.role.startsWith('Blanking') && enabled.has(l.sku));
-  const tail: Omit<Slot, 'u'>[] = [];
+const TOP_RANK: Record<string, number> = { patch: 0, cable: 0, switch: 0, poe: 0, router: 1, shelf: 2 };
+const BOTTOM_FIRST = new Set(['pdu', ...DEVICES.filter((d) => d.zone === 'bottom').map((d) => d.id)]);
+const rankOf = (token: string) => TOP_RANK[token] ?? 3;
+const isToken = (t: string) => t === GAP || t === 'shelf' || t === 'pdu' || deviceById.get(t)?.mount === 'rack';
+
+function tokenCounts(rack: Rack, input: BuilderInput, need: Need, lines: Line[], enabled: Set<string>): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const d of DEVICES) if (d.mount === 'rack' && (input.devices[d.id] ?? 0) > 0) counts.set(d.id, input.devices[d.id]);
+  if (need.shelfZones) counts.set('shelf', need.shelfZones);
   const pdu = lines.find((l) => l.sku.includes('PDU') && enabled.has(l.sku));
   const pduU = pdu ? (bySku.get(pdu.sku) as Accessory).ru ?? 0 : 0;
-  if (pdu && pduU && !(rack.type === 'floor' || rack.type === 'soundproof')) for (let i = 0; i < pdu.qty; i++) tail.push({ height: pduU, label: 'PDU', kind: 'pdu' });
-  for (const d of DEVICES.filter((x) => x.zone === 'bottom')) for (let i = 0; i < (input.devices[d.id] ?? 0); i++) tail.push({ height: d.ru, label: d.label, kind: 'device' });
-
-  const usedTop = items.reduce((s, x) => s + x.height, 0);
-  const usedTail = tail.reduce((s, x) => s + x.height, 0);
-  let spare = rack.ru - usedTop - usedTail;
-  const middle: Omit<Slot, 'u'>[] = [];
-  for (const b of blanks) {
-    const h = (bySku.get(b.sku) as Accessory).ru ?? 1;
-    for (let i = 0; i < b.qty && spare >= h; i++) { middle.push({ height: h, label: 'Blanking panel', kind: 'blank' }); spare -= h; }
-  }
-  if (spare > 0) middle.push({ height: spare, label: `${spare}U free`, kind: 'empty' });
-
-  let u = rack.ru; // U numbering counts from the bottom; top slot first.
-  const out: Slot[] = [];
-  for (const s of [...items, ...middle, ...tail]) {
-    if (u - s.height < 0) { out.push({ ...s, height: Math.max(u, 0), u, label: `${s.label} (doesn't fit)` }); u = 0; break; }
-    out.push({ ...s, u }); u -= s.height;
-  }
-  return out.filter((s) => s.height > 0);
+  if (pdu && pduU && rack.type !== 'floor' && rack.type !== 'soundproof') counts.set('pdu', pdu.qty);
+  return counts;
 }
+
+/** The arrangement an installer would usually choose: patching and switching at the top, heavy gear low. */
+function defaultSeq(counts: Map<string, number>): string[] {
+  const take = (t: string) => Array.from({ length: counts.get(t) ?? 0 }, () => t);
+  const top: string[] = [];
+  const lanes = [take('patch'), take('cable'), [...take('switch'), ...take('poe')]];
+  while (lanes.some((l) => l.length)) for (const l of lanes) { const t = l.shift(); if (t) top.push(t); }
+  top.push(...take('router'), ...take('shelf'));
+  for (const d of DEVICES) if (d.zone === 'middle' && d.mount === 'rack') top.push(...take(d.id));
+  const bottom = [...take('pdu')];
+  for (const d of DEVICES) if (d.zone === 'bottom') bottom.push(...take(d.id));
+  return [...top, GAP, ...bottom];
+}
+
+/** Keeps the customer's order, dropping what was removed and slotting in what was added. */
+function reconcile(layout: string[], counts: Map<string, number>): string[] {
+  const seq = layout.filter((t, i) => (t === GAP ? layout.indexOf(GAP) === i : counts.has(t)));
+  if (!seq.includes(GAP)) seq.push(GAP);
+  for (const [token, want] of counts) {
+    let have = seq.filter((t) => t === token).length;
+    for (; have > want; have--) seq.splice(seq.lastIndexOf(token), 1);
+    for (; have < want; have++) {
+      const gap = seq.indexOf(GAP);
+      if (BOTTOM_FIRST.has(token)) { seq.splice(token === 'pdu' ? gap + 1 : seq.length, 0, token); continue; }
+      const at = seq.findIndex((t, i) => i < gap && rankOf(t) > rankOf(token));
+      seq.splice(at === -1 ? gap : at, 0, token);
+    }
+  }
+  return seq;
+}
+
+export function arrange(rack: Rack, input: BuilderInput, need: Need, lines: Line[], enabled: Set<string>): Arrangement {
+  const counts = tokenCounts(rack, input, need, lines, enabled);
+  const seq = input.layout ? reconcile(input.layout, counts) : defaultSeq(counts);
+  const shelfLine = lines.find((l) => l.role.startsWith('Shelf'));
+  const pduLine = lines.find((l) => l.sku.includes('PDU'));
+  const seen = new Map<string, number>();
+  const make = (token: string, index: number): Placed => {
+    const n = seen.get(token) ?? 0;
+    seen.set(token, n + 1);
+    const base = { id: `${token}#${n}`, token, seq: index, u: 0 };
+    if (token === 'shelf') {
+      const boxes = Math.min(BOXES_PER_SHELF, need.shelfBoxes - n * BOXES_PER_SHELF);
+      const shelf = shelfLine ? (bySku.get(shelfLine.sku) as Accessory) : null;
+      return { ...base, kind: 'shelf', face: 'shelf', label: `Shelf with ${boxes} desktop box${boxes > 1 ? 'es' : ''}`, ru: SHELF_ZONE_U, depth: shelf?.shelfDepth ?? 275, ldr: true, sku: shelfLine?.sku, boxes };
+    }
+    if (token === 'pdu') {
+      const acc = bySku.get(pduLine!.sku) as Accessory;
+      return { ...base, kind: 'pdu', face: 'pdu', label: `PDU, ${acc.outlets}-outlet`, ru: acc.ru ?? 1, depth: 60, ldr: true, sku: acc.sku };
+    }
+    const d = deviceById.get(token)!;
+    const supplied = !!d.supplySku && enabled.has(d.supplySku);
+    return { ...base, kind: 'device', face: d.id as FaceKind, label: d.label.replace(/, (24-port|\dU)$/, ''), ru: d.ru, depth: d.depth, ldr: supplied, sku: supplied ? d.supplySku : undefined };
+  };
+  const gap = seq.indexOf(GAP);
+  const top = seq.slice(0, gap).map((t, i) => make(t, i));
+  const bottom = seq.slice(gap + 1).map((t, i) => make(t, gap + 1 + i));
+
+  const items: Placed[] = [], unplaced: Placed[] = [];
+  let u = rack.ru;                                    // next free unit under the top stack
+  for (const it of top) { if (u - it.ru >= 0) { items.push({ ...it, u }); u -= it.ru; } else unplaced.push(it); }
+  let floor = 0;                                      // units taken by the bottom stack
+  const stand: Placed[] = [];
+  for (const it of [...bottom].reverse()) { if (floor + it.ru <= u) { floor += it.ru; stand.unshift({ ...it, u: floor }); } else unplaced.push(it); }
+
+  const spare = u - floor;
+  let left = spare, n = 0;
+  const blanks = lines.filter((l) => l.role.startsWith('Blanking') && enabled.has(l.sku))
+    .map((l) => ({ line: l, acc: bySku.get(l.sku) as Accessory })).sort((a, b) => (b.acc.ru ?? 1) - (a.acc.ru ?? 1));
+  for (const { line, acc } of blanks) {
+    const h = acc.ru ?? 1;
+    for (let i = 0; i < line.qty && left >= h; i++, n++) {
+      items.push({ id: `blank#${n}`, kind: 'blank', token: 'blank', face: 'blank', label: 'Blanking panel', ru: h, u, depth: 4, seq: -1, ldr: true, sku: acc.sku });
+      u -= h; left -= h;
+    }
+  }
+  if (left > 0) items.push({ id: 'free', kind: 'free', token: 'free', face: null, label: `${left}U free`, ru: left, u, depth: 0, seq: -1, ldr: false });
+  items.push(...stand);
+  return { items, seq, unplaced, spare };
+}
+
+/** Moves the token at `from` so it ends up at index `to` of the sequence left after removing it. */
+export function moveToken(seq: string[], from: number, to: number): string[] {
+  const next = [...seq];
+  const [token] = next.splice(from, 1);
+  next.splice(Math.max(0, Math.min(next.length, to)), 0, token);
+  return next;
+}
+/** The id arrange() gives the token at `index`. */
+export const idAt = (seq: string[], index: number) => `${seq[index]}#${seq.slice(0, index).filter((t) => t === seq[index]).length}`;
 
 // ---------- URL state ----------
 export function encodeInput(i: BuilderInput): string {
@@ -302,6 +413,7 @@ export function encodeInput(i: BuilderInput): string {
   if (i.depthOverride) sp.set('depth', String(i.depthOverride));
   if (i.quiet) sp.set('quiet', '1');
   if (i.lockedRack) sp.set('rack', i.lockedRack);
+  if (i.layout) sp.set('lay', i.layout.map((t) => (t === GAP ? '_' : t)).join('.'));
   return sp.toString();
 }
 
@@ -319,6 +431,7 @@ export function decodeInput(search: string): BuilderInput | null {
     if (deviceById.has(k)) devices[k] = Math.max(0, Math.min(40, parseInt(q, 10) || 0));
   }
   const place = sp.get('place') as Placement | null;
+  const lay = (sp.get('lay') ?? '').split('.').map((t) => (t === '_' ? GAP : t)).filter(isToken);
   return {
     ...DEFAULT_INPUT,
     placement: placeFromRack ?? (place && place in PLACEMENT_TYPES ? place : DEFAULT_INPUT.placement),
@@ -329,5 +442,6 @@ export function decodeInput(search: string): BuilderInput | null {
     depthOverride: sp.get('depth') ? parseInt(sp.get('depth')!, 10) || null : null,
     quiet: sp.get('quiet') === '1',
     lockedRack: locked?.kind === 'rack' ? locked.sku : null,
+    layout: lay.length ? lay : null,
   };
 }

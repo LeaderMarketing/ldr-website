@@ -2,19 +2,24 @@
 import Base from '../layouts/Base.astro';
 import RackBuilder from '../components/builder/RackBuilder.tsx';
 ---
-<Base title="Rack Builder" description="Describe your equipment and the LDR Rack Builder matches a standard cabinet, checks depth and growth space, and lists the shelves, power and blanking panels that fit.">
-  <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Rack Builder</nav>
-    <header class="page-intro">
-      <h1>Rack Builder</h1>
-      <p class="lede">Tell us where the rack is going and what you're putting in it. We'll match a standard LDR cabinet and list the parts that fit it.</p>
-    </header>
-    <RackBuilder client:load />
+<Base title="Rack Builder" description="Add your equipment and watch the rack fill up. The LDR Rack Builder matches a standard cabinet, checks depth and growth space, and lists the shelves, power and blanking panels that fit.">
+  <div class="builder-page">
+    <div class="wrap wrap--wide">
+      <header class="builder-intro">
+        <h1>Rack Builder</h1>
+        <p>Add your equipment and watch the rack fill up. We match a standard LDR cabinet and list the parts that fit it.</p>
+      </header>
+      <RackBuilder client:load />
+    </div>
   </div>
 </Base>
 
 <style>
-  .page-intro { padding: 12px 0 28px; }
-  .page-intro h1 { margin-bottom: .3em; }
-  .wrap { padding-bottom: 80px; }
+  .builder-page { background: var(--paper-2); padding-bottom: clamp(40px, 6vw, 80px); }
+  .builder-page { --intro-h: 64px; }
+  .builder-intro { display: flex; align-items: center; gap: 0 20px; height: var(--intro-h); padding: 4px 4px 0; overflow: hidden; }
+  .builder-intro h1 { font-size: clamp(1.5rem, 2.4vw, 1.875rem); letter-spacing: -.03em; margin: 0; }
+  .builder-intro p { margin: 0; color: var(--muted); font-size: .9375rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 820px) { .builder-intro p { display: none; } .builder-page { --intro-h: 54px; } }
+  @media print { .builder-page { background: none; } .builder-intro p { display: none; } }
 </style>

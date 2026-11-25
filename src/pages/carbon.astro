@@ -1,13 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
-import { racks, accessories, TYPE_LABEL, GROUP_LABEL, type RackType, type AccGroup } from '../lib/catalog';
+import { racks, accessories, bySku, TYPE_LABEL, GROUP_LABEL, type Rack, type RackType, type AccGroup } from '../lib/catalog';
+import { lineupArt } from '../lib/art';
 
 const carbonRacks = racks.filter((r) => r.range === 'carbon');
 const carbonAcc = accessories.filter((a) => a.range === 'carbon');
 const rackGroups = (['wall', 'floor', 'mini', 'vertical', 'bracket'] as RackType[])
   .map((t) => [t, carbonRacks.filter((r) => r.type === t)] as const).filter(([, l]) => l.length);
 const accGroups = [...new Set(carbonAcc.map((a) => a.group))] as AccGroup[];
+const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12U-CARBON', 'RCLDR-SS450-18U-CARBON',
+  'RCLDR-FS600-22U-CARBON', 'RCLDR-FS800-27U-CARBON', 'RCLDR-FS600-32U-CARBON', 'RCLDR-FS1000-42U-CARBON', 'RCLDR-FWMAX-47U-CARBON']
+  .map((s) => bySku.get(s)).filter((p): p is Rack => p?.kind === 'rack');
 const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type === t).map((r) => r.ru); return `${Math.min(...l)}U–${Math.max(...l)}U`; };
 ---
 <Base title="Carbon range" description="LDR Carbon: a new range of wall, floor and 10-inch cabinets with matching shelves, doors, plinths and cable management.">
@@ -19,6 +23,10 @@ const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type ===
         {rackGroups.map(([t]) => <a href={`#${t}`}>{TYPE_LABEL[t]}</a>)}
         <a href="#fit-out">Fit-out</a>
       </nav>
+      <figure class="lineup">
+        <div class="lineup-scroll"><div class="lineup-art" set:html={lineupArt(lineup, { labels: true })} /></div>
+        <figcaption>Illustrations, drawn to one scale by rack units. Select a cabinet for its details.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -60,23 +68,32 @@ const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type ===
 </Base>
 
 <style>
-  .c-hero { background: var(--charcoal); color: #fff; padding: clamp(48px, 7vw, 88px) 0; }
-  .c-logo { height: clamp(56px, 8vw, 84px); width: auto; margin-bottom: 24px; }
-  .c-hero .lede { color: #b9bcc2; }
-  .c-jump { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
-  .c-jump a { color: #fff; text-decoration: none; border: 1px solid #4a4d53; border-radius: 999px; padding: 6px 14px; font-size: .875rem; }
-  .c-jump a:hover { border-color: #fff; }
-  .c-status { margin: 28px 0 0; }
-  .c-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin: 28px 0 16px; }
-  .c-stat { background: #fff; padding: 22px; display: grid; gap: 4px; align-content: start; }
-  .c-stat strong { font-size: 2.2rem; font-stretch: 112%; line-height: 1; }
-  .c-stat span { font-weight: 600; }
-  .c-stat p { margin: 4px 0 0; color: var(--muted); font-size: .875rem; }
+  .c-hero { background: var(--charcoal); color: #f5f5f7; padding: clamp(56px, 8vw, 104px) 0 clamp(40px, 6vw, 72px); text-align: center; }
+  .c-hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .c-logo { height: clamp(64px, 9vw, 104px); width: auto; margin-bottom: 26px; }
+  .c-hero .lede { color: #a1a1a6; }
+  .c-jump { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 26px; }
+  .c-jump a { color: #f5f5f7; text-decoration: none; background: rgb(255 255 255 / .1); border-radius: 999px; padding: 8px 16px; font-size: .875rem; font-weight: 500; transition: background .2s; }
+  .c-jump a:hover { background: rgb(255 255 255 / .2); }
+  .lineup { width: 100%; margin: clamp(40px, 6vw, 72px) 0 0; }
+  .lineup-scroll { overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
+  .lineup-scroll::-webkit-scrollbar { display: none; }
+  .lineup-art { min-width: 760px; }
+  .lineup-art :global(svg) { width: 100%; height: auto; overflow: visible; }
+  .lineup-art :global(.lu-item) { transition: filter .3s; cursor: pointer; }
+  .lineup-art :global(.lu-item:hover) { filter: brightness(1.5); }
+  .lineup figcaption { margin-top: 22px; font-size: .75rem; color: #86868b; }
+  .c-status { margin: 32px 0 0; }
+  .c-overview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 20px 0 16px; }
+  .c-stat { background: var(--paper-2); border-radius: var(--radius-lg); padding: 24px; display: grid; gap: 4px; align-content: start; }
+  .c-stat strong { font-size: 2.75rem; font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+  .c-stat span { font-weight: 600; font-size: .9375rem; margin-top: 6px; }
+  .c-stat p { margin: 2px 0 0; color: var(--muted); font-size: .875rem; }
   @media (max-width: 860px) { .c-overview { grid-template-columns: 1fr 1fr; } }
-  .c-group { padding: 40px 0 8px; scroll-margin-top: 80px; }
-  .acc-block { margin-bottom: 28px; }
-  .acc-block h3 { font-size: 1rem; margin-bottom: 12px; }
-  .c-cta { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--line); margin: 40px 0 80px; padding-top: 40px; }
-  .c-cta h2 { margin-bottom: .2em; }
+  .c-group { padding: 48px 0 8px; scroll-margin-top: 80px; }
+  .acc-block { margin-bottom: 32px; }
+  .acc-block h3 { font-size: .9375rem; margin-bottom: 12px; color: var(--muted); font-weight: 500; }
+  .c-cta { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; background: var(--paper-2); border-radius: var(--radius-xl); margin: 56px 0 96px; padding: clamp(28px, 4vw, 48px); }
+  .c-cta h2 { margin-bottom: .2em; font-size: clamp(1.5rem, 2.6vw, 2rem); }
   .c-cta p { margin: 0; }
 </style>

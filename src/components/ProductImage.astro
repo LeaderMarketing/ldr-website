@@ -1,20 +1,29 @@
 ---
+// Product photo on a soft tile. Photos are shot on white, so they are multiplied into the tile
+// colour. Cabinets with no photo yet get a scale illustration drawn from their catalogue data.
 import type { Product } from '../lib/catalog';
+import { cabinetArt } from '../lib/art';
 import Glyph from './Glyph.astro';
 interface Props { product: Product; src?: string | null; eager?: boolean; size?: 'card' | 'hero' }
 const { product, src = product.image, eager = false, size = 'card' } = Astro.props;
-const pending = !src;
+const art = !src && product.kind === 'rack' ? cabinetArt(product) : null;
 ---
-<div class:list={['pimg', `pimg--${size}`, pending && 'pimg--pending']}>
-  <div class="pimg-fallback" aria-hidden={src ? 'true' : undefined}><Glyph product={product} /></div>
-  {src && <img src={src} alt={product.name} loading={eager ? 'eager' : 'lazy'} decoding="async" onerror="this.remove()" />}
-  {pending && <span class="pimg-note">Photo coming soon</span>}
+<div class:list={['pimg', `pimg--${size}`, !src && 'pimg--pending']} style={size === 'hero' ? 'view-transition-name: product-image' : undefined}>
+  {art
+    ? <div class="pimg-art" set:html={art} />
+    : <div class="pimg-fallback" aria-hidden={src ? 'true' : undefined}><Glyph product={product} /></div>}
+  {src && <img src={src} alt={product.name} loading={eager ? 'eager' : 'lazy'} decoding="async" onerror="this.parentElement.classList.add('pimg--pending');this.remove()" />}
+  {!src && <span class="pimg-note">{art ? 'Illustration' : 'Photo coming soon'}</span>}
 </div>
 <style>
-  .pimg { position: relative; aspect-ratio: 4 / 3; background: #fff; display: grid; place-items: center; overflow: hidden; }
-  .pimg--hero { aspect-ratio: 1 / 1; border: 1px solid var(--line); border-radius: var(--radius-lg); }
-  .pimg--pending { background: linear-gradient(180deg, #f7f7f5, #edeeec); }
-  .pimg-fallback { position: absolute; inset: 14%; }
-  .pimg img { position: relative; width: 100%; height: 100%; object-fit: contain; padding: 8%; background: #fff; }
-  .pimg-note { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font: 500 .6875rem/1 var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+  .pimg { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center; overflow: hidden; }
+  .pimg--hero { aspect-ratio: 1 / 1; background: var(--paper-2); border-radius: var(--radius-xl); }
+  .pimg-fallback { position: absolute; inset: 18%; display: none; }
+  .pimg--pending .pimg-fallback { display: block; }
+  .pimg-art { position: absolute; inset: 11% 14% 15%; }
+  .pimg-art :global(svg) { width: 100%; height: 100%; }
+  .pimg img { position: relative; width: 100%; height: 100%; object-fit: contain; padding: 9%; mix-blend-mode: multiply; transition: transform .7s var(--ease); }
+  .pimg--hero img { padding: 11%; }
+  .pimg-note { position: absolute; bottom: 12px; left: 50%; translate: -50% 0; font: 500 .6875rem/1 var(--font-sans); color: var(--muted); white-space: nowrap; }
+  .pimg--hero .pimg-note { bottom: 18px; font-size: .75rem; }
 </style>
