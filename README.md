@@ -11,6 +11,12 @@ npm run build      # rebuilds catalog.json, then the static site into dist/
 npm run sync       # refresh existing-range data from Leader Dealer Shop (needs the `leader` CLI)
 ```
 
+## Preview deploy (GitHub Pages)
+
+Every push to `master` builds and deploys a preview to **https://leadermarketing.github.io/ldr-website/** (`.github/workflows/deploy-pages.yml`). Preview pages carry `noindex`.
+
+Pages serves the site under `/ldr-website/`, so internal links must go through `url()` from `src/lib/url.ts` (e.g. `href={url('/products')}`), never a bare `/products`. The workflow sets `BASE_PATH`/`SITE_URL`; locally and in production they're unset and the site builds at the root. To build the preview locally in Git Bash: `MSYS_NO_PATHCONV=1 BASE_PATH=/ldr-website npm run build`.
+
 ## Pages
 
 | Route | Purpose |

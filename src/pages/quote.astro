@@ -1,12 +1,13 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import { products } from '../lib/catalog';
 import { site } from '../data/site';
-const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rrp: p.rrp, url: `/products/${p.slug}` }]));
+const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rrp: p.rrp, url: url(`/products/${p.slug}`) }]));
 ---
 <Base title="Request a quote" description="Send your LDR parts list and we'll connect you with a reseller for pricing and availability.">
   <div class="wrap q">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Request a quote</nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span aria-hidden="true">/</span>Request a quote</nav>
     <header class="page-intro">
       <h1>Request a quote</h1>
       <p class="lede">Send us your parts list. We'll confirm availability and connect you with a reseller for pricing.</p>
@@ -15,7 +16,7 @@ const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rr
     <form id="quote" class="q-grid" novalidate>
       <section class="q-items">
         <h2>Parts</h2>
-        <p id="q-empty" class="muted">No parts added yet. Use <a href="/rack-builder">the Rack Builder</a> or add SKUs below.</p>
+        <p id="q-empty" class="muted">No parts added yet. Use <a href={url('/rack-builder')}>the Rack Builder</a> or add SKUs below.</p>
         <ul id="q-list"></ul>
         <div class="q-add">
           <label for="q-sku" class="visually-hidden">Add a SKU</label>
@@ -23,7 +24,7 @@ const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rr
           <datalist id="q-skus">{products.map((p) => <option value={p.sku}>{p.name}</option>)}</datalist>
           <button type="button" id="q-add" class="btn btn--secondary">Add</button>
         </div>
-        <p id="q-build" class="muted q-build" hidden>Includes a Rack Builder configuration. <a id="q-build-link" href="/rack-builder">Open the build</a></p>
+        <p id="q-build" class="muted q-build" hidden>Includes a Rack Builder configuration. <a id="q-build-link" href={url('/rack-builder')}>Open the build</a></p>
       </section>
 
       <section class="q-details">
@@ -62,7 +63,7 @@ const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rr
   const build = sp.get('build');
   if (build) {
     document.getElementById('q-build')!.hidden = false;
-    (document.getElementById('q-build-link') as HTMLAnchorElement).href = `/rack-builder?${build}`;
+    (document.getElementById('q-build-link') as HTMLAnchorElement).href = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/rack-builder?${build}`;
   }
   const list = document.getElementById('q-list')!;
   const empty = document.getElementById('q-empty')!;
@@ -109,7 +110,7 @@ const lookup = Object.fromEntries(products.map((p) => [p.sku, { name: p.name, rr
     const body = [
       `Name: ${fd.get('name')}`, `Company: ${fd.get('company') || '-'}`, `Email: ${fd.get('email')}`,
       `Phone: ${fd.get('phone') || '-'}`, `Postcode: ${fd.get('postcode') || '-'}`, `Role: ${fd.get('role')}`, '',
-      'Parts:', ...lines, '', build ? `Rack Builder: ${location.origin}/rack-builder?${build}` : '',
+      'Parts:', ...lines, '', build ? `Rack Builder: ${location.origin}${import.meta.env.BASE_URL.replace(/\/$/, '')}/rack-builder?${build}` : '',
       `Notes: ${fd.get('message') || '-'}`,
     ].join('\n');
     location.href = `mailto:${email}?subject=${encodeURIComponent('LDR quote request')}&body=${encodeURIComponent(body)}`;

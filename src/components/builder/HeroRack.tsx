@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { PRESETS, DEFAULT_INPUT, recommend, fitOut, arrange, encodeInput, type BuilderInput } from '../../lib/builder';
 import { formatRRP } from '../../lib/catalog';
 import RackScene from './RackScene';
+import { url } from '../../lib/url';
 import './hero-rack.css';
 
 const CYCLE_MS = 5600;
@@ -50,7 +51,7 @@ export default function HeroRack() {
           <strong>{rack.name}</strong>
           <small><span className="sku">{rack.sku}</span> · {rec.need.usedU}U used of {rack.ru}U · {price ? `${price} RRP` : 'Price on request'}</small>
         </div>
-        <a className="btn btn--primary btn--small" href={`/rack-builder?${encodeInput(input)}`}>Open in builder</a>
+        <a className="btn btn--primary btn--small" href={url(`/rack-builder?${encodeInput(input)}`)}>Open in builder</a>
       </div>
     </div>
   );

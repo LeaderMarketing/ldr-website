@@ -1,4 +1,5 @@
 ---
+import { url } from '../../lib/url';
 import Base from '../../layouts/Base.astro';
 import ProductImage from '../../components/ProductImage.astro';
 import ProductCard from '../../components/ProductCard.astro';
@@ -16,7 +17,7 @@ const price = formatRRP(p);
 const equivalent = p.equivalent ? bySku.get(p.equivalent) : null;
 const isRack = p.kind === 'rack';
 const category = isRack ? TYPE_LABEL[p.type] : GROUP_LABEL[p.group];
-const categoryHref = isRack ? `/products?kind=rack&type=${p.type}` : `/products?kind=accessory&type=${p.group}`;
+const categoryHref = url(isRack ? `/products?kind=rack&type=${p.type}` : `/products?kind=accessory&type=${p.group}`);
 
 // Spec rows: Leader's datasheet rows when we have them, otherwise what the SKU tells us.
 let specRows: [string, string][] = p.specs;
@@ -61,8 +62,8 @@ const dimsComplete = !!known && known.W && known.H && known.D && known.usable;
 <Base title={`${p.name} (${p.sku})`} description={p.summary || `${p.name}, ${p.sku}. ${category} from LDR.`} kind={p.kind}>
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span aria-hidden="true">/</span>
-      <a href={isRack ? '/products?kind=rack' : '/products?kind=accessory'}>{isRack ? 'Racks' : 'Accessories'}</a><span aria-hidden="true">/</span>
+      <a href={url('/')}>Home</a><span aria-hidden="true">/</span>
+      <a href={url(isRack ? '/products?kind=rack' : '/products?kind=accessory')}>{isRack ? 'Racks' : 'Accessories'}</a><span aria-hidden="true">/</span>
       <a href={categoryHref}>{category}</a><span aria-hidden="true">/</span>{p.sku}
     </nav>
 
@@ -99,9 +100,9 @@ const dimsComplete = !!known && known.W && known.H && known.D && known.usable;
           <p class="price">{price ? <><strong>{price}</strong> <span class="muted">RRP inc GST</span></> : <span>Price on request</span>}</p>
           {p.range === 'carbon' && <p class="notice">Carbon is a new range. Pricing, stock and full datasheets are being finalised: request a quote and your reseller will confirm availability.</p>}
           <div class="actions">
-            <a class="btn btn--primary" href={`/quote?items=${encodeURIComponent(`${p.sku}:1`)}`}>Request a quote</a>
-            {isRack && <a class="btn btn--secondary" href={`/rack-builder?rack=${p.sku}`}>Plan the fit-out</a>}
-            <a class="btn btn--secondary" href="/where-to-buy">Where to buy</a>
+            <a class="btn btn--primary" href={url(`/quote?items=${encodeURIComponent(`${p.sku}:1`)}`)}>Request a quote</a>
+            {isRack && <a class="btn btn--secondary" href={url(`/rack-builder?rack=${p.sku}`)}>Plan the fit-out</a>}
+            <a class="btn btn--secondary" href={url('/where-to-buy')}>Where to buy</a>
           </div>
           <p class="trade muted">Trade customer? <a href="https://partner.leadersystems.com.au" rel="noopener">Check pricing & stock in the Leader portal ↗</a></p>
         </div>
@@ -144,7 +145,7 @@ const dimsComplete = !!known && known.W && known.H && known.D && known.usable;
 
     {isRack && groupedAcc.length > 0 && (
       <section class="related">
-        <div class="section-head"><h2>Fits this cabinet</h2><a class="link-arrow" href={`/rack-builder?rack=${p.sku}`}>Plan a full fit-out →</a></div>
+        <div class="section-head"><h2>Fits this cabinet</h2><a class="link-arrow" href={url(`/rack-builder?rack=${p.sku}`)}>Plan a full fit-out →</a></div>
         <p class="muted fit-note">Matched on mounting standard, cabinet type and depth. Shelf depths follow Leader's recommendations; check equipment depth before ordering.</p>
         {groupedAcc.map(([g, list]) => (
           <div class="acc-group">

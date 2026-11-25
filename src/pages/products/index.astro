@@ -1,4 +1,5 @@
 ---
+import { url } from '../../lib/url';
 import Base from '../../layouts/Base.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import { products, racks, accessories, TYPE_LABEL, GROUP_LABEL, type RackType, type AccGroup } from '../../lib/catalog';
@@ -13,7 +14,7 @@ const countBy = (f: (p: (typeof products)[number]) => boolean) => products.filte
 ---
 <Base title="Products" description="Browse every LDR rack, cabinet and accessory. Filter by type, rack units, width, depth and door.">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Products</nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span aria-hidden="true">/</span>Products</nav>
     <header class="cat-head">
       <h1 id="cat-title">All products</h1>
       <p class="lede">Every LDR rack, cabinet and accessory, including the new Carbon range.</p>
@@ -95,7 +96,7 @@ const countBy = (f: (p: (typeof products)[number]) => boolean) => products.filte
         </div>
         <div id="empty" class="empty" hidden>
           <h2>No products match</h2>
-          <p class="muted">Try removing a filter, or let the <a href="/rack-builder">Rack Builder</a> find the closest match for your equipment.</p>
+          <p class="muted">Try removing a filter, or let the <a href={url('/rack-builder')}>Rack Builder</a> find the closest match for your equipment.</p>
         </div>
       </section>
     </div>

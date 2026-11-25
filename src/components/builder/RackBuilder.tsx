@@ -6,6 +6,7 @@ import {
 import { bySku, formatRRP, productUrl, usableDepth, type Rack } from '../../lib/catalog';
 import { faceThumb, cabinetArt, type FaceKind } from '../../lib/art';
 import RackScene, { type View } from './RackScene';
+import { url } from '../../lib/url';
 import './rack-builder.css';
 
 const PLACEMENTS: { id: Placement; title: string; text: string; icon: ReactNode }[] = [
@@ -90,7 +91,7 @@ export default function RackBuilder() {
     try { await navigator.clipboard.writeText(location.href); setCopied(true); setTimeout(() => setCopied(false), 1600); } catch { /* clipboard unavailable */ }
   }
 
-  const quoteHref = `/quote?items=${encodeURIComponent(active.map((l) => `${l.sku}:${l.qty}`).join(','))}&build=${encodeURIComponent(encodeInput(input))}`;
+  const quoteHref = url(`/quote?items=${encodeURIComponent(active.map((l) => `${l.sku}:${l.qty}`).join(','))}&build=${encodeURIComponent(encodeInput(input))}`);
   const isHot = (it: Placed) => !!hot && (hot.id === it.id || (!!hot.sku && hot.sku === it.sku) || (!!hot.token && (hot.token === it.token || (hot.token === 'desktop' && it.token === 'shelf'))));
   const hotId = plan?.items.find(isHot)?.id ?? null;
   const used = rec.need.usedU;

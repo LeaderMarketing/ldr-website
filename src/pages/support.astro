@@ -1,11 +1,12 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import { products, productUrl } from '../lib/catalog';
 const sheets = products.filter((p) => p.datasheet).sort((a, b) => a.sku.localeCompare(b.sku));
 ---
 <Base title="Support" description="How to choose a rack: rack units, width, depth and load. Plus LDR datasheets and answers to common questions.">
   <div class="wrap support">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Support</nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span aria-hidden="true">/</span>Support</nav>
     <header class="page-intro">
       <h1>Support</h1>
       <p class="lede">Sizing guidance, datasheets and answers to common questions.</p>
@@ -32,12 +33,12 @@ const sheets = products.filter((p) => p.datasheet).sort((a, b) => a.sku.localeCo
           <p>600 mm wide suits most installs. 800 mm wide cabinets give room for vertical cable managers and dense patching. Glass doors let you see status lights; mesh doors move more air for servers and switches running hot.</p>
         </article>
       </div>
-      <p class="cta-line"><a class="btn btn--primary" href="/rack-builder">Let the Rack Builder size it for you</a></p>
+      <p class="cta-line"><a class="btn btn--primary" href={url('/rack-builder')}>Let the Rack Builder size it for you</a></p>
     </section>
 
     <section id="faq" class="block">
       <h2>Frequently asked questions</h2>
-      <details><summary>Can I buy LDR directly?</summary><p>LDR is sold through resellers and integrators and supplied by Leader Systems. See <a href="/where-to-buy">Where to buy</a>, or request a quote and we'll pass it to a reseller near you.</p></details>
+      <details><summary>Can I buy LDR directly?</summary><p>LDR is sold through resellers and integrators and supplied by Leader Systems. See <a href={url('/where-to-buy')}>Where to buy</a>, or request a quote and we'll pass it to a reseller near you.</p></details>
       <details><summary>Will 19" equipment fit a 10" mini rack?</summary><p>No. 10" mini racks take 10-inch equipment only. For standard 19" switches and patch panels, use a wall cabinet.</p></details>
       <details><summary>What's the difference between the Carbon range and the existing LDR range?</summary><p>Carbon is the new generation, with a charcoal finish and a wider choice of sizes and fit-out parts, including spare doors, plinths and vertical cable managers. The existing LDR range stays available. Where both ranges offer the same size, product pages link to the equivalent.</p></details>
       <details><summary>Do floor cabinets include a PDU and shelves?</summary><p>Some do. The LDR 18U, 22U and 42U floor cabinets include an 8-port PDU, a 4-way fan and two fixed shelves. Check "In the box" on each product page.</p></details>

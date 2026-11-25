@@ -5,6 +5,7 @@
 //   - lineupArt():   several cabinets side by side at one scale
 //   - dimensionArt(): front and side outline with dimension lines
 import type { Rack } from './catalog';
+import { url } from './url';
 
 export const U_MM = 44.45;
 export const PANEL_MM = { '19': 482.6, '10': 254 } as const;
@@ -383,7 +384,7 @@ export function lineupArt(list: Rack[], opts: { gap?: number; labels?: boolean; 
   const maxH = Math.max(...shapes.map((x) => x.sh.h)), fs = maxH * 0.034, pad = opts.labels ? fs * 3.6 : 0;
   let x = 0, body = '';
   for (const { r, sh } of shapes) {
-    body += `<a href="/products/${r.slug}" class="lu-item"><title>${r.name} (${r.sku})</title><g transform="translate(${f(x)} ${f(maxH - sh.h)})">${sh.inner}</g>`;
+    body += `<a href="${url(`/products/${r.slug}`)}" class="lu-item"><title>${r.name} (${r.sku})</title><g transform="translate(${f(x)} ${f(maxH - sh.h)})">${sh.inner}</g>`;
     if (opts.labels) body += `<text x="${f(x + (sh.w - rackGeo(r).D * KX) / 2)}" y="${f(maxH + fs * 1.9)}" text-anchor="middle" font-size="${f(fs)}" font-weight="600" fill="${ink}">${r.ru}U</text><text x="${f(x + (sh.w - rackGeo(r).D * KX) / 2)}" y="${f(maxH + fs * 3.1)}" text-anchor="middle" font-size="${f(fs * 0.62)}" fill="${muted}">${r.type === 'mini' ? '10"' : r.type}</text>`;
     body += '</a>';
     x += sh.w + gap;

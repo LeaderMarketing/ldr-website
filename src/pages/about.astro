@@ -1,10 +1,11 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import { products } from '../lib/catalog';
 ---
 <Base title="About LDR" description="LDR is a range of data racks, cabinets and accessories distributed in Australia by Leader Systems.">
   <div class="wrap about">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>About</nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span aria-hidden="true">/</span>About</nav>
     <header class="page-intro">
       <h1>About LDR</h1>
       <p class="lede">LDR is a range of data racks, cabinets and rack accessories distributed in Australia by Leader Systems.</p>
@@ -18,7 +19,7 @@ import { products } from '../lib/catalog';
       <div>
         <h2>How it's sold</h2>
         <p>LDR is sold through resellers, installers and integrators. They order through Leader Systems and collect from, or have freight sent from, the nearest Leader warehouse.</p>
-        <p><a class="link-arrow" href="/where-to-buy">Where to buy →</a></p>
+        <p><a class="link-arrow" href={url('/where-to-buy')}>Where to buy →</a></p>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
 import HeroRack from '../components/builder/HeroRack.tsx';
@@ -31,7 +32,7 @@ const demoOn = demoLines.filter((l) => !l.optional || l.defaultOn);
 const demoPlan = arrange(demoRack, demoInput, demo.need, demoLines, new Set(demoOn.map((l) => l.sku)));
 const demoStack = demoPlan.items.filter((i) => i.kind !== 'blank' && i.kind !== 'free');
 const demoDepth = usableDepth(demoRack);
-const demoHref = `/rack-builder?${encodeInput(demoInput)}`;
+const demoHref = url(`/rack-builder?${encodeInput(demoInput)}`);
 
 // Carbon cabinets, drawn to one scale.
 const carbon = racks.filter((r) => r.range === 'carbon');
@@ -48,8 +49,8 @@ const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12
         <h1>Find the rack that fits.</h1>
         <p class="lede">Wall cabinets from 4U, floor cabinets up to 47U, and the shelves, power and cable management to fit them out. Pick a setup and watch the cabinet size itself.</p>
         <div class="hero-actions">
-          <a class="btn btn--primary" href="/rack-builder">Open the Rack Builder</a>
-          <a class="btn btn--secondary" href="/products?kind=rack">Browse racks</a>
+          <a class="btn btn--primary" href={url('/rack-builder')}>Open the Rack Builder</a>
+          <a class="btn btn--secondary" href={url('/products?kind=rack')}>Browse racks</a>
         </div>
         <p class="hero-note">Distributed by Leader Systems through Australian resellers.</p>
       </div>
@@ -59,11 +60,11 @@ const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12
 
   <section class="section types">
     <div class="wrap">
-      <div class="section-head reveal"><h2>Shop by type</h2><a class="link-arrow" href="/products">All {products.length} products →</a></div>
+      <div class="section-head reveal"><h2>Shop by type</h2><a class="link-arrow" href={url('/products')}>All {products.length} products →</a></div>
       <div class="type-grid">
         {categories.map((c, i) => (
           <div class="reveal" style={`--d: ${i * 0.07}s`}>
-            <a href={c.href} class="type-tile">
+            <a href={url(c.href)} class="type-tile">
               <div class="type-text">
                 <h3>{c.title}</h3>
                 <p>{c.text}</p>
@@ -112,7 +113,7 @@ const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12
       </div>
       <div class="how-cta reveal">
         <a class="btn btn--primary" href={demoHref}>Open this build</a>
-        <a class="link-arrow" href="/rack-builder">Start from scratch →</a>
+        <a class="link-arrow" href={url('/rack-builder')}>Start from scratch →</a>
       </div>
     </div>
   </section>
@@ -120,9 +121,9 @@ const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12
   <section class="section section--dark carbon-band">
     <div class="wrap">
       <div class="carbon-head reveal">
-        <img src="/brand/ldr-carbon-light.png" alt="LDR Carbon" class="carbon-logo" width="233" height="84" />
+        <img src={url('/brand/ldr-carbon-light.png')} alt="LDR Carbon" class="carbon-logo" width="233" height="84" />
         <p class="lede">The new Carbon range: {carbon.length} cabinets from 2U brackets to a 47U floor rack, with {carbonAcc} matching fit-out parts including spare doors, plinths and vertical cable managers.</p>
-        <a class="btn btn--secondary" href="/carbon">Explore Carbon</a>
+        <a class="btn btn--secondary" href={url('/carbon')}>Explore Carbon</a>
       </div>
       <figure class="lineup reveal">
         <div class="lineup-scroll"><div class="lineup-art" set:html={lineupArt(lineup, { labels: true })} /></div>
@@ -133,7 +134,7 @@ const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head reveal"><h2>Popular cabinets</h2><a class="link-arrow" href="/products?kind=rack">All racks →</a></div>
+      <div class="section-head reveal"><h2>Popular cabinets</h2><a class="link-arrow" href={url('/products?kind=rack')}>All racks →</a></div>
       <div class="grid grid--4">{featured.map((p, i) => <div class="reveal" style={`--d: ${i * 0.06}s`}><ProductCard product={p} /></div>)}</div>
     </div>
   </section>
@@ -146,8 +147,8 @@ const lineup = ['RCLDR-MR10-4U-CARBON', 'RCLDR-SS450-6U-CARBON', 'RCLDR-SS450-12
           <p class="lede">LDR is sold through resellers and integrators, supplied from Leader Systems warehouses in Adelaide, Brisbane, Melbourne, Perth and Sydney. Already have a Leader account? Order directly through the trade portal.</p>
         </div>
         <div class="buy-actions">
-          <a class="btn btn--primary" href="/where-to-buy">Where to buy</a>
-          <a class="btn btn--secondary" href="/quote">Request a quote</a>
+          <a class="btn btn--primary" href={url('/where-to-buy')}>Where to buy</a>
+          <a class="btn btn--secondary" href={url('/quote')}>Request a quote</a>
         </div>
       </div>
     </div>

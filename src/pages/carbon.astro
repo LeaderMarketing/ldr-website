@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { racks, accessories, bySku, TYPE_LABEL, GROUP_LABEL, type Rack, type RackType, type AccGroup } from '../lib/catalog';
@@ -17,7 +18,7 @@ const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type ===
 <Base title="Carbon range" description="LDR Carbon: a new range of wall, floor and 10-inch cabinets with matching shelves, doors, plinths and cable management.">
   <section class="c-hero">
     <div class="wrap">
-      <img src="/brand/ldr-carbon-light.png" alt="LDR Carbon" width="233" height="84" class="c-logo" />
+      <img src={url('/brand/ldr-carbon-light.png')} alt="LDR Carbon" width="233" height="84" class="c-logo" />
       <p class="lede">A new generation of LDR cabinets in a charcoal finish, with a fit-out range designed alongside it: spare doors, plinths, vertical cable managers, baying and earthing kits.</p>
       <nav class="c-jump" aria-label="Carbon range sections">
         {rackGroups.map(([t]) => <a href={`#${t}`}>{TYPE_LABEL[t]}</a>)}
@@ -42,13 +43,13 @@ const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type ===
 
     {rackGroups.map(([t, list]) => (
       <section class="c-group" id={t}>
-        <div class="section-head"><h2>Carbon {TYPE_LABEL[t].toLowerCase()}</h2><a class="link-arrow" href={`/products?range=carbon&kind=rack&type=${t}`}>Filter & compare →</a></div>
+        <div class="section-head"><h2>Carbon {TYPE_LABEL[t].toLowerCase()}</h2><a class="link-arrow" href={url(`/products?range=carbon&kind=rack&type=${t}`)}>Filter & compare →</a></div>
         <div class="grid grid--4">{list.map((p) => <ProductCard product={p} />)}</div>
       </section>
     ))}
 
     <section class="c-group" id="fit-out">
-      <div class="section-head"><h2>Carbon fit-out</h2><a class="link-arrow" href="/products?range=carbon&kind=accessory">All Carbon accessories →</a></div>
+      <div class="section-head"><h2>Carbon fit-out</h2><a class="link-arrow" href={url('/products?range=carbon&kind=accessory')}>All Carbon accessories →</a></div>
       {accGroups.map((g) => (
         <div class="acc-block">
           <h3>{GROUP_LABEL[g]}</h3>
@@ -62,7 +63,7 @@ const ruSpan = (t: RackType) => { const l = carbonRacks.filter((r) => r.type ===
         <h2>Not sure which size?</h2>
         <p class="muted">The Rack Builder sizes a Carbon cabinet from your equipment list and adds the matching fit-out.</p>
       </div>
-      <a class="btn btn--primary" href="/rack-builder?range=carbon">Build a Carbon rack</a>
+      <a class="btn btn--primary" href={url('/rack-builder?range=carbon')}>Build a Carbon rack</a>
     </section>
   </div>
 </Base>

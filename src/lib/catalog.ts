@@ -1,4 +1,5 @@
 import data from '../data/catalog.json';
+import { url } from './url';
 
 export type Range = 'carbon' | 'classic';
 export type RackType = 'wall' | 'floor' | 'mini' | 'vertical' | 'open-frame' | 'bracket' | 'soundproof';
@@ -87,4 +88,4 @@ export function keySpecs(p: Product): string {
   return parts.join(' · ');
 }
 
-export const productUrl = (p: Product) => `/products/${p.slug}`;
+export const productUrl = (p: Product) => url(`/products/${p.slug}`);

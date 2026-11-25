@@ -1,16 +1,17 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Page not found">
   <div class="wrap nf">
     <h1>Page not found</h1>
     <p class="lede">That page doesn't exist or has moved. Try searching for a SKU, or browse the range.</p>
-    <form action="/products" role="search" class="nf-search">
+    <form action={url('/products')} role="search" class="nf-search">
       <label for="nf-q" class="visually-hidden">Search products</label>
       <input id="nf-q" name="q" class="input" type="search" placeholder="Search SKU or product" />
       <button class="btn btn--primary">Search</button>
     </form>
-    <p><a class="link-arrow" href="/products">Browse all products →</a></p>
+    <p><a class="link-arrow" href={url('/products')}>Browse all products →</a></p>
   </div>
 </Base>
 <style>
